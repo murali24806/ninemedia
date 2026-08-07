@@ -98,15 +98,20 @@ export const caseStudies = [
 ];
 
 export const roles = [
-  { title: "Performance Marketing Executive", type: "Full-time · Visakhapatnam" },
-  { title: "Graphic & Motion Designer", type: "Full-time · Visakhapatnam" },
-  { title: "Client Servicing Associate", type: "Full-time · Visakhapatnam" },
+  { title: "Performance Marketing Executive", type: "Full-time · Hyderabad" },
+  { title: "Graphic & Motion Designer", type: "Full-time · Hyderabad" },
+  { title: "Client Servicing Associate", type: "Full-time · Hyderabad" },
 ];
 
 export const contact = {
-  address: "502, 5th Floor, Vinayagar Manapragada, Gurudwara Junction, Visakhapatnam - 530016",
-  phone: "+91 6309631798",
-  phoneRaw: "916309631798",
+  name: "Nine Media Brand Solutions",
+  address: "Hyderabad",
+  phone: "+91 9068483601",
+  phoneRaw: "919068483601",
+  phone2: "+91 9032377814",
+  phone2Raw: "919032377814",
+  whatsapp: "+91 9701925491",
+  whatsappRaw: "919701925491",
   email: "ninemedia.in@gmail.com",
 };
 
@@ -198,7 +203,7 @@ export const faqs = [
   },
   {
     q: "Where is Nine Media located?",
-    a: "Our headquarters are at 502, 5th Floor, Vinayagar Manapragada, Gurudwara Junction, Visakhapatnam - 530016. We serve client brands across India and internationally."
+    a: "Our headquarters are located in Hyderabad. We serve client brands across India and internationally."
   },
   {
     q: "Can we get a custom tailored marketing package?",

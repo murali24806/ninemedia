@@ -19,7 +19,7 @@ export default function Contact() {
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-nm-orange text-xs font-mono tracking-widest uppercase mb-4">
               <Mail className="w-3.5 h-3.5" />
-              Get In Touch
+              {contact.name}
             </div>
 
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
@@ -37,7 +37,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400">Headquarters</h4>
-                  <p className="text-sm font-medium text-slate-200 mt-1 max-w-sm">{contact.address}</p>
+                  <p className="text-sm font-bold text-white mt-1">{contact.name}</p>
+                  <p className="text-xs font-medium text-slate-300 mt-0.5">{contact.address}</p>
                 </div>
               </div>
 
@@ -47,9 +48,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400">Call Us Directly</h4>
-                  <a href={`tel:${contact.phoneRaw}`} className="text-sm font-bold text-white hover:text-nm-yellow transition-colors mt-1 block">
-                    {contact.phone}
-                  </a>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                    <a href={`tel:${contact.phoneRaw}`} className="text-sm font-bold text-white hover:text-nm-yellow transition-colors">
+                      {contact.phone}
+                    </a>
+                    <span className="text-slate-500 text-xs">•</span>
+                    <a href={`tel:${contact.phone2Raw}`} className="text-sm font-bold text-white hover:text-nm-yellow transition-colors">
+                      {contact.phone2}
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -67,13 +74,13 @@ export default function Contact() {
 
               <div className="pt-4">
                 <a
-                  href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20discuss%20a%20project`}
+                  href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20discuss%20a%20project`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#25D366] text-white text-xs font-bold shadow-lg hover:scale-105 transition-all"
                 >
                   <MessageCircle className="w-4 h-4 fill-white/20 stroke-[2.2]" />
-                  Chat on WhatsApp ({contact.phone})
+                  Chat on WhatsApp ({contact.whatsapp})
                 </a>
               </div>
             </div>

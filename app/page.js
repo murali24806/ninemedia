@@ -7,7 +7,6 @@ import Clients from "./components/Clients";
 import Portfolio from "./components/Portfolio";
 import CaseStudies from "./components/CaseStudies";
 import Testimonials from "./components/Testimonials";
-import PricingCalculator from "./components/PricingCalculator";
 import FAQ from "./components/FAQ";
 import Careers from "./components/Careers";
 import Contact from "./components/Contact";
@@ -25,7 +24,6 @@ export default function Home() {
       <Portfolio />
       <CaseStudies />
       <Testimonials />
-      <PricingCalculator />
       <FAQ />
       <Careers />
       <Contact />
@@ -33,3 +31,4 @@ export default function Home() {
     </main>
   );
 }
+

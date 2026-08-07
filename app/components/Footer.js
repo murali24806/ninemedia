@@ -28,7 +28,6 @@ export default function Footer() {
               <li><a href="#services" className="hover:text-nm-orange transition-colors">Core Solutions</a></li>
               <li><a href="#portfolio" className="hover:text-nm-orange transition-colors">Selected Work</a></li>
               <li><a href="#case-studies" className="hover:text-nm-orange transition-colors">Case Studies</a></li>
-              <li><a href="#pricing" className="hover:text-nm-orange transition-colors">Pricing Plans</a></li>
               <li><a href="#careers" className="hover:text-nm-orange transition-colors">Careers</a></li>
             </ul>
           </div>
@@ -41,12 +40,17 @@ export default function Footer() {
                 <Mail className="w-3.5 h-3.5 text-nm-orange shrink-0" />
                 {contact.email}
               </a>
-              <a href={`tel:${contact.phoneRaw}`} className="flex items-center gap-2 text-slate-300 hover:text-nm-yellow transition-colors">
-                <Phone className="w-3.5 h-3.5 text-nm-orange shrink-0" />
-                {contact.phone}
-              </a>
+              <div className="flex flex-col gap-1">
+                <a href={`tel:${contact.phoneRaw}`} className="flex items-center gap-2 text-slate-300 hover:text-nm-yellow transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-nm-orange shrink-0" />
+                  {contact.phone}
+                </a>
+                <a href={`tel:${contact.phone2Raw}`} className="flex items-center gap-2 text-slate-300 hover:text-nm-yellow transition-colors pl-5">
+                  {contact.phone2}
+                </a>
+              </div>
               <a 
-                href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
+                href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-[#25D366] font-semibold hover:underline mt-1"

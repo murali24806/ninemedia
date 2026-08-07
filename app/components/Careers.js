@@ -19,7 +19,7 @@ export default function Careers() {
             </h2>
 
             <p className="mt-6 text-slate-300 leading-relaxed max-w-md text-sm">
-              Nine Media is constantly looking for exceptional creative strategists, performance marketers, motion designers, and account managers in Visakhapatnam.
+              Nine Media is constantly looking for exceptional creative strategists, performance marketers, motion designers, and account managers in Hyderabad.
             </p>
 
             <a

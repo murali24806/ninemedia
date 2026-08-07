@@ -1,15 +1,21 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import React, { useRef } from "react";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 
-export const ContainerScroll = ({ titleComponent, children }) => {
-  const containerRef = useRef(null);
+export const ContainerScroll = ({
+  titleComponent,
+  children,
+}: {
+  titleComponent: string | React.ReactNode;
+  children: React.ReactNode;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
   });
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -48,7 +54,7 @@ export const ContainerScroll = ({ titleComponent, children }) => {
   );
 };
 
-export const Header = ({ translate, titleComponent }) => {
+export const Header = ({ translate, titleComponent }: any) => {
   return (
     <motion.div
       style={{
@@ -61,7 +67,16 @@ export const Header = ({ translate, titleComponent }) => {
   );
 };
 
-export const Card = ({ rotate, scale, children }) => {
+export const Card = ({
+  rotate,
+  scale,
+  children,
+}: {
+  rotate: MotionValue<number>;
+  scale: MotionValue<number>;
+  translate: MotionValue<number>;
+  children: React.ReactNode;
+}) => {
   return (
     <motion.div
       style={{
@@ -78,4 +93,3 @@ export const Card = ({ rotate, scale, children }) => {
     </motion.div>
   );
 };
-

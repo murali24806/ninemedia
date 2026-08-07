@@ -10,7 +10,6 @@ const LINKS = [
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#case-studies", label: "Case Studies" },
-  { href: "#pricing", label: "Pricing" },
   { href: "#careers", label: "Careers" },
   { href: "#contact", label: "Contact" },
 ];
@@ -66,7 +65,7 @@ export default function Header() {
             {contact.phone}
           </a>
           <a
-            href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
+            href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-nm-gradient text-nm-ink text-xs font-bold shadow-lg shadow-nm-orange/20 hover:shadow-nm-orange/40 hover:scale-105 transition-all"
@@ -118,15 +117,15 @@ export default function Header() {
               className="text-xs font-medium text-slate-400 flex items-center gap-2"
             >
               <Phone className="w-3.5 h-3.5 text-nm-orange" />
-              {contact.phone}
+              {contact.phone} / {contact.phone2}
             </a>
             <a
-              href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
+              href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-3 rounded-xl bg-nm-gradient text-nm-ink text-center text-xs font-bold shadow-lg"
             >
-              Chat on WhatsApp ({contact.phone})
+              Chat on WhatsApp ({contact.whatsapp})
             </a>
           </div>
         </div>

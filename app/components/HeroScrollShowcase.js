@@ -43,9 +43,9 @@ export default function HeroScrollShowcase() {
           <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4 relative z-10">
             <div className="flex items-center gap-2.5 sm:gap-3">
               <img
-                src="/logo-icon.jpg"
+                src="/logo-icon.png"
                 alt="Nine Media Icon"
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-contain border border-white/10"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
               />
               <div>
                 <div className="text-xs sm:text-sm font-bold text-white font-display">Nine Media Growth Engine</div>
@@ -59,7 +59,7 @@ export default function HeroScrollShowcase() {
                 Live Campaigns Active
               </span>
               <a
-                href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20want%20to%20see%20live%20campaign%20dashboard%20demo`}
+                href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20want%20to%20see%20live%20campaign%20dashboard%20demo`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-nm-gradient text-nm-ink font-bold text-[11px] sm:text-xs uppercase tracking-wider shadow-lg shadow-nm-orange/20 hover:scale-105 transition-all flex items-center gap-1"

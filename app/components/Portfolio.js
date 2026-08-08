@@ -56,12 +56,12 @@ export default function Portfolio() {
     }
   }, [filter, emblaApi]);
 
-  // Auto-slide timer (every 3.5 seconds)
+  // Auto-slide timer (every 2 seconds)
   useEffect(() => {
     if (!emblaApi || isPaused) return;
     const timer = setInterval(() => {
       emblaApi.scrollNext();
-    }, 3500);
+    }, 2000);
     return () => clearInterval(timer);
   }, [emblaApi, isPaused]);
 
@@ -161,10 +161,10 @@ export default function Portfolio() {
               return (
                 <div
                   key={item.client}
-                  className="flex-[0_0_88%] sm:flex-[0_0_48%] lg:flex-[0_0_31%] min-w-0"
+                  className="flex-[0_0_88%] xs:flex-[0_0_85%] sm:flex-[0_0_48%] lg:flex-[0_0_31%] min-w-0"
                 >
                   <a
-                    href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20see%20case%20details%20for%20${encodeURIComponent(
+                    href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20see%20case%20details%20for%20${encodeURIComponent(
                       item.client
                     )}`}
                     target="_blank"

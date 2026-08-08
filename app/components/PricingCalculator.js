@@ -74,7 +74,7 @@ export default function PricingCalculator() {
               </div>
 
               <a 
-                href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(pkg.name)}%20package.`}
+                href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(pkg.name)}%20package.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-full py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${

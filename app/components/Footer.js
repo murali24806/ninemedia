@@ -10,9 +10,9 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <a href="#top" className="inline-block">
               <img
-                src="/logo-full.jpg"
+                src="/logo-full.png"
                 alt="Nine Media Brand Solutions"
-                className="h-11 w-auto object-contain rounded-md"
+                className="h-14 md:h-16 w-auto object-contain"
               />
             </a>
             <p className="text-xs leading-relaxed max-w-sm text-slate-400">

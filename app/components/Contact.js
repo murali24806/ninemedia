@@ -5,11 +5,60 @@ import { contact } from "./data";
 import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    message: "",
+  });
   const [status, setStatus] = useState("idle");
 
-  function handleSubmit(e) {
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  async function handleSubmit(e) {
     e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/ninemedia.in@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Inquiry from ${formData.name}`,
+          _template: "table",
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone || "N/A",
+          Address: formData.address,
+          Message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", phone: "", address: "", message: "" });
+      } else {
+        triggerMailto();
+      }
+    } catch (err) {
+      triggerMailto();
+    }
+  }
+
+  function triggerMailto() {
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}\n\nProject Brief:\n${formData.message}`
+    );
+    window.location.href = `mailto:ninemedia.in@gmail.com?subject=${subject}&body=${body}`;
     setStatus("sent");
+    setFormData({ name: "", email: "", phone: "", address: "", message: "" });
   }
 
   return (
@@ -99,6 +148,8 @@ export default function Contact() {
                   required
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-nm-orange focus:outline-none transition-colors"
                   placeholder="John Doe"
                 />
@@ -110,6 +161,8 @@ export default function Contact() {
                   required
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-nm-orange focus:outline-none transition-colors"
                   placeholder="john@company.com"
                 />
@@ -120,8 +173,23 @@ export default function Contact() {
                 <input
                   type="tel"
                   name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-nm-orange focus:outline-none transition-colors"
                   placeholder="+91 98765 43210"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Your Address</label>
+                <input
+                  required
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-nm-orange focus:outline-none transition-colors"
+                  placeholder="City, State / Full Address"
                 />
               </div>
 
@@ -131,6 +199,8 @@ export default function Contact() {
                   required
                   name="message"
                   rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-nm-orange focus:outline-none resize-none transition-colors"
                   placeholder="Tell us about your brand goals, target timeline, or required services..."
                 />
@@ -139,11 +209,14 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full py-4 rounded-full bg-nm-gradient text-nm-ink font-bold text-xs uppercase tracking-wider shadow-lg shadow-nm-orange/30 hover:scale-102 transition-all flex items-center justify-center gap-2"
+              disabled={status === "sending"}
+              className="w-full py-4 rounded-full bg-nm-gradient text-nm-ink font-bold text-xs uppercase tracking-wider shadow-lg shadow-nm-orange/30 hover:scale-102 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
             >
-              {status === "sent" ? (
+              {status === "sending" ? (
+                <>Sending to ninemedia.in@gmail.com...</>
+              ) : status === "sent" ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4" /> Message Sent Successfully
+                  <CheckCircle2 className="w-4 h-4" /> Sent to ninemedia.in@gmail.com
                 </>
               ) : (
                 <>
@@ -154,7 +227,7 @@ export default function Contact() {
 
             {status === "sent" && (
               <p className="text-xs text-nm-yellow text-center mt-3">
-                Thank you! Our strategy team will reach out to you shortly.
+                Thank you! Your details have been sent to ninemedia.in@gmail.com. Our team will contact you shortly.
               </p>
             )}
           </form>

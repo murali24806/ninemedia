@@ -40,8 +40,8 @@ export default function Clients() {
       {/* Infinite Marquee Track (Left to Right Animation) */}
       <div className="relative w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] relative z-10">
         <motion.div
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
+          animate={{ x: ["0%", "-33.33333%"] }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
           className="flex items-center gap-5 sm:gap-7 py-4 whitespace-nowrap min-w-max will-change-transform transform-gpu"
         >
           {marqueeLogos.map((client, i) => (

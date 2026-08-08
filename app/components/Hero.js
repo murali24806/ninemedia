@@ -86,7 +86,7 @@ export default function Hero() {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityGraphic = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  const titleWords = ["Brands", "that", "sell", "more", "are", "built,", "not", "bought."];
+  const titleWords = ["Digital", "Marketing", "Agency", "Helping", "Brands", "to", "Selling", "More"];
 
   return (
     <section
@@ -120,21 +120,21 @@ export default function Hero() {
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 text-nm-orange text-[10px] xs:text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-6 sm:mb-8 shadow-inner max-w-full">
             <Sparkles className="w-3.5 h-3.5 shrink-0 text-nm-yellow" />
-            <span>Digital Marketing Agency Helping Brands to Selling More</span>
+            <span>Integrated Branding dma</span>
           </div>
 
           {/* Dynamic Animated Title */}
           <h1 className="font-display font-black text-white text-[2.2rem] xs:text-[2.7rem] sm:text-[3.8rem] lg:text-[4.4rem] leading-[1.08] tracking-tight">
             {titleWords.map((word, i) => (
               <span key={i} className="inline-block mr-[0.2em] sm:mr-[0.25em]">
-                {i === 2 || i === 3 ? (
+                {i >= 6 ? (
                   <span className="text-gradient drop-shadow-[0_0_25px_rgba(255,107,0,0.4)]">
                     {word}{" "}
                   </span>
                 ) : (
                   word + " "
                 )}
-                {i === 3 && <br className="hidden sm:block" />}
+                {i === 2 && <br className="hidden sm:block" />}
               </span>
             ))}
           </h1>

@@ -17,7 +17,7 @@ export default function PixelNine({ size = 220, className = "" }) {
   const cell = size / 7;
   return (
     <div
-      className={`pixel-nine ${className}`}
+      className={`pixel-nine grid grid-cols-7 gap-1 ${className}`}
       style={{
         width: size,
         height: (size / 7) * 9,

@@ -164,7 +164,7 @@ export default function Services() {
                         </div>
 
                         <a
-                          href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(s.title)}%20solutions.`}
+                          href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(s.title)}%20solutions.`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full py-3 rounded-full bg-nm-gradient text-nm-ink font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-nm-orange/20 hover:scale-102 transition-all"

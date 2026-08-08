@@ -74,6 +74,8 @@ export default function CaseStudies() {
           ref={emblaRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
         >
           <div className="embla__container flex -ml-6 will-change-transform transform-gpu">
             {caseStudies.map((cs) => (

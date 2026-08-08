@@ -35,11 +35,11 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 group">
-          <div className="relative h-10 md:h-11 w-44 md:w-52 transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-9 xs:h-11 sm:h-13 md:h-15 w-40 xs:w-48 sm:w-56 md:w-64 max-w-[65vw] xs:max-w-none transition-transform duration-300 group-hover:scale-105">
             <img
-              src="/logo-full.jpg"
+              src="/logo-full.png"
               alt="Nine Media Brand Solutions"
-              className="h-full w-full object-contain rounded-md"
+              className="h-full w-full object-contain object-left"
             />
           </div>
         </a>

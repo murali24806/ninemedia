@@ -83,7 +83,7 @@ export default function FAQ() {
             <p className="text-xs text-slate-400 mt-1">Talk directly to our lead strategy consultant on WhatsApp.</p>
           </div>
           <a
-            href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20have%20a%20question%20about%20your%20services`}
+            href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20have%20a%20question%20about%20your%20services`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-bold shadow-lg hover:scale-105 transition-all flex items-center gap-2 shrink-0"

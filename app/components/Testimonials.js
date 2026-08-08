@@ -43,14 +43,16 @@ export default function Testimonials() {
     };
   }, [emblaApi, onSelect]);
 
+  const [isPaused, setIsPaused] = useState(false);
+
   // Auto-play interval
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || isPaused) return;
     const autoPlayTimer = setInterval(() => {
       emblaApi.scrollNext();
     }, 5000);
     return () => clearInterval(autoPlayTimer);
-  }, [emblaApi]);
+  }, [emblaApi, isPaused]);
 
   return (
     <section id="testimonials" className="bg-[#08090D] py-24 md:py-36 relative border-t border-white/5 overflow-hidden">
@@ -111,8 +113,14 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        {/* Embla Slider Track */}
-        <div className="embla overflow-hidden" ref={emblaRef}>
+        <div
+          className="embla overflow-hidden"
+          ref={emblaRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
           <div className="embla__container flex -ml-6">
             {testimonials.map((t, idx) => (
               <div
@@ -150,7 +158,7 @@ export default function Testimonials() {
                     </div>
 
                     <a
-                      href={`https://wa.me/${contact.phoneRaw}?text=Hello%20Nine%20Media%2C%20I%20saw%20your%20testimonial%20from%20${encodeURIComponent(t.brand)}`}
+                      href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20saw%20your%20testimonial%20from%20${encodeURIComponent(t.brand)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-nm-yellow hover:bg-nm-gradient hover:text-nm-ink hover:border-transparent transition-all flex items-center gap-1.5 shadow-md"

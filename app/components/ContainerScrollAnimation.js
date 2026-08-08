@@ -20,13 +20,9 @@ export const ContainerScroll = ({ titleComponent, children }) => {
     };
   }, []);
 
-  const scaleDimensions = () => {
-    return isMobile ? [0.88, 1] : [1.03, 1];
-  };
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [isMobile ? 12 : 20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -30 : -80]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [isMobile ? 8 : 20, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [isMobile ? 0.95 : 1.03, 1]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -20 : -80]);
 
   return (
     <div

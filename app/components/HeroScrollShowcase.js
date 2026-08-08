@@ -69,27 +69,27 @@ export default function HeroScrollShowcase() {
             </div>
           </div>
 
-          {/* Middle Dashboard Analytics Cards */}
+          {/* Middle Dashboard Analytics Cards - 8-Year Company Growth */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 my-3 sm:my-6 relative z-10">
             <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#141724] border border-white/10 flex flex-col justify-between">
               <div className="flex justify-between items-center text-slate-400 mb-2">
-                <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider">Total Impressions</span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider">Campaigns Delivered</span>
                 <BarChart3 className="w-4 h-4 text-nm-orange" />
               </div>
-              <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white font-display">12.8 Million+</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white font-display">300+ Delivered</div>
               <div className="text-[10px] sm:text-[11px] text-emerald-400 mt-1.5 font-mono flex items-center gap-1">
-                <TrendingUp className="w-3.5 h-3.5" /> +340% YoY Reach
+                <TrendingUp className="w-3.5 h-3.5" /> +340% Overall Expansion
               </div>
             </div>
 
             <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#141724] border border-white/10 flex flex-col justify-between">
               <div className="flex justify-between items-center text-slate-400 mb-2">
-                <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider">Avg Campaign ROAS</span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider">Proven Track Record</span>
                 <Zap className="w-4 h-4 text-nm-yellow" />
               </div>
-              <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white font-display">4.85x Return</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white font-display">8+ Years Scale</div>
               <div className="text-[10px] sm:text-[11px] text-nm-yellow mt-1.5 font-mono flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5" /> Meta &amp; SEM Ads
+                <ShieldCheck className="w-3.5 h-3.5" /> Founded 2018 to 2026
               </div>
             </div>
 

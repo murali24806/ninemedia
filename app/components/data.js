@@ -61,8 +61,7 @@ export const portfolioItems = [
   { client: "The Cloud Overseas", tag: "Study Abroad Campaign", category: "Marketing" },
   { client: "Somaa", tag: "Event Promotion", category: "Events" },
   { client: "TrustLogics", tag: "Brand Campaign", category: "Branding" },
-  { client: "Kismet", tag: "Nightlife Event", category: "Events" },
-  { client: "Ameya World School", tag: "Festive Campaign", category: "Marketing" },
+  { client: "Vignan's School", tag: "Festive Campaign", category: "Marketing" },
   { client: "Nine Media", tag: "Self Promotion", category: "Branding" },
 ];
 
@@ -98,18 +97,18 @@ export const caseStudies = [
 ];
 
 export const roles = [
-  { title: "Performance Marketing Executive", type: "Full-time · Hyderabad" },
+  { title: "Digital Marketing Intern", type: "Full-time / Internship · Hyderabad" },
   { title: "Graphic & Motion Designer", type: "Full-time · Hyderabad" },
-  { title: "Client Servicing Associate", type: "Full-time · Hyderabad" },
+  { title: "Senior Marketing Executive", type: "Full-time · Hyderabad" },
 ];
 
 export const contact = {
   name: "Nine Media Brand Solutions",
   address: "Hyderabad",
-  phone: "+91 9068483601",
-  phoneRaw: "919068483601",
-  phone2: "+91 9032377814",
-  phone2Raw: "919032377814",
+  phone: "+91 9701925491",
+  phoneRaw: "919701925491",
+  phone2: "+91 9701925491",
+  phone2Raw: "919701925491",
   whatsapp: "+91 9701925491",
   whatsappRaw: "919701925491",
   email: "ninemedia.in@gmail.com",

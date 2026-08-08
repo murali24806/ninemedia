@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
 import { caseStudies, contact } from "./data";
@@ -8,6 +8,16 @@ import { ChevronLeft, ChevronRight, TrendingUp, CheckCircle } from "lucide-react
 
 export default function CaseStudies() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-slide timer (every 3.5 seconds)
+  useEffect(() => {
+    if (!emblaApi || isPaused) return;
+    const timer = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [emblaApi, isPaused]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -62,6 +72,8 @@ export default function CaseStudies() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="embla overflow-hidden" 
           ref={emblaRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div className="embla__container flex -ml-6">
             {caseStudies.map((cs) => (

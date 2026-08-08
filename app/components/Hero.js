@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { ArrowRight, Sparkles, CheckCircle2, TrendingUp, ArrowUpRight, BarChart3, Zap, Activity } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle2, TrendingUp, ArrowUpRight, BarChart3, Zap, Activity, Award, ShieldCheck, Building2 } from "lucide-react";
 import { contact } from "./data";
 
 export default function Hero() {
@@ -13,6 +13,70 @@ export default function Hero() {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [activeGrowthTab, setActiveGrowthTab] = useState("campaigns");
+
+  const growthConfig = {
+    campaigns: {
+      label: "Cumulative Campaigns Delivered",
+      value: "300+",
+      growth: "+340% Expansion",
+      sub: "Across Meta, Google & Video Production",
+      peak: "300+ Campaigns",
+      dPrimary: "M 20 145 C 50 140, 70 135, 70 135 C 100 128, 120 120, 120 120 C 145 110, 170 100, 170 100 C 195 88, 220 75, 220 75 C 245 65, 270 55, 270 55 C 295 45, 320 35, 320 35 C 345 25, 370 15, 370 15",
+      dFill: "M 20 145 C 50 140, 70 135, 70 135 C 100 128, 120 120, 120 120 C 145 110, 170 100, 170 100 C 195 88, 220 75, 220 75 C 245 65, 270 55, 270 55 C 295 45, 320 35, 320 35 C 345 25, 370 15, 370 15 L 370 160 L 20 160 Z",
+      years: [
+        { yr: "2018", x: 20, y: 145, count: "12" },
+        { yr: "2019", x: 70, y: 135, count: "35" },
+        { yr: "2020", x: 120, y: 120, count: "70" },
+        { yr: "2021", x: 170, y: 100, count: "115" },
+        { yr: "2022", x: 220, y: 75, count: "170" },
+        { yr: "2023", x: 270, y: 55, count: "220" },
+        { yr: "2024", x: 320, y: 35, count: "275" },
+        { yr: "2026", x: 370, y: 15, count: "300+" },
+      ],
+    },
+    clients: {
+      label: "Empowered Client Brands",
+      value: "150+",
+      growth: "96.4% Retention",
+      sub: "Global & Domestic Brand Partners",
+      peak: "150+ Brands",
+      dPrimary: "M 20 150 C 60 142, 120 130, 170 108 C 220 82, 270 60, 320 38 C 350 25, 370 18, 370 18",
+      dFill: "M 20 150 C 60 142, 120 130, 170 108 C 220 82, 270 60, 320 38 C 350 25, 370 18, 370 18 L 370 160 L 20 160 Z",
+      years: [
+        { yr: "2018", x: 20, y: 150, count: "8" },
+        { yr: "2019", x: 70, y: 142, count: "20" },
+        { yr: "2020", x: 120, y: 130, count: "42" },
+        { yr: "2021", x: 170, y: 108, count: "68" },
+        { yr: "2022", x: 220, y: 82, count: "95" },
+        { yr: "2023", x: 270, y: 60, count: "120" },
+        { yr: "2024", x: 320, y: 38, count: "140" },
+        { yr: "2026", x: 370, y: 18, count: "150+" },
+      ],
+    },
+    experience: {
+      label: "Years of Proven Excellence",
+      value: "8+ YRS",
+      growth: "Since 2018",
+      sub: "Proven Track Record in Media & Marketing",
+      peak: "8+ Years Growth",
+      dPrimary: "M 20 155 C 70 145, 120 132, 170 110 C 220 85, 270 58, 320 32 C 350 20, 370 12, 370 12",
+      dFill: "M 20 155 C 70 145, 120 132, 170 110 C 220 85, 270 58, 320 32 C 350 20, 370 12, 370 12 L 370 160 L 20 160 Z",
+      years: [
+        { yr: "2018", x: 20, y: 155, count: "Yr 1" },
+        { yr: "2019", x: 70, y: 145, count: "Yr 2" },
+        { yr: "2020", x: 120, y: 132, count: "Yr 3" },
+        { yr: "2021", x: 170, y: 110, count: "Yr 4" },
+        { yr: "2022", x: 220, y: 85, count: "Yr 5" },
+        { yr: "2023", x: 270, y: 58, count: "Yr 6" },
+        { yr: "2024", x: 320, y: 32, count: "Yr 7" },
+        { yr: "2026", x: 370, y: 12, count: "Yr 8+" },
+      ],
+    },
+  };
+
+  const currentMetric = growthConfig[activeGrowthTab];
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -54,9 +118,9 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 text-nm-orange text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-6 sm:mb-8 shadow-inner max-w-full">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 text-nm-orange text-[10px] xs:text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-6 sm:mb-8 shadow-inner max-w-full">
             <Sparkles className="w-3.5 h-3.5 shrink-0 text-nm-yellow" />
-            <span className="truncate">Digital Marketing Agency</span>
+            <span>Digital Marketing Agency Helping Brands to Selling More</span>
           </div>
 
           {/* Dynamic Animated Title */}
@@ -176,216 +240,260 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Column Animated Graph Showcase */}
+        {/* Right Column: 8-Year Company Growth Graph Showcase */}
         <motion.div
           style={{ opacity: opacityGraphic }}
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="relative flex justify-center items-center w-full px-2 sm:px-0"
+          className="relative flex justify-center items-center w-full px-1 sm:px-0"
         >
-          {/* Ambient Glow effect behind card */}
-          <div className="absolute inset-0 bg-gradient-to-r from-nm-orange/25 via-nm-yellow/25 to-nm-red/25 rounded-3xl blur-2xl sm:blur-3xl opacity-70 transform scale-95" />
+          {/* Multi-layer Ambient Backlight Glow */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-nm-orange/25 via-nm-yellow/20 to-nm-red/25 rounded-3xl blur-3xl opacity-60 transform scale-95 pointer-events-none" />
 
-          {/* Glass Card Container */}
-          <div className="relative w-full max-w-[480px] rounded-2xl sm:rounded-3xl p-5 sm:p-7 bg-gradient-to-b from-[#131625]/95 via-[#0E101D]/98 to-[#080912] border border-white/15 backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.8)] flex flex-col justify-between overflow-hidden group hover:border-nm-orange/50 transition-all duration-500">
+          {/* Premium Glass Dashboard Card Container */}
+          <div className="relative w-full max-w-[500px] rounded-2xl sm:rounded-3xl p-4 sm:p-6 bg-[#0B0D17]/95 border border-white/15 backdrop-blur-2xl shadow-[0_30px_70px_rgba(0,0,0,0.85)] flex flex-col justify-between overflow-hidden group hover:border-nm-orange/40 transition-all duration-500">
             
-            {/* Spinning Gradient Border Highlight */}
-            <div className="absolute inset-[-1px] rounded-2xl sm:rounded-3xl bg-gradient-to-r from-nm-yellow via-nm-orange to-nm-red opacity-20 blur-sm group-hover:opacity-50 transition-opacity pointer-events-none" />
+            {/* Top Accent Gradient Line */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-nm-orange to-transparent opacity-80" />
 
-            {/* Header of Graph Card */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-3.5 sm:pb-4 relative z-10">
+            {/* Header: Title & 8-Year Badge */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4 relative z-10">
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-nm-orange to-nm-yellow flex items-center justify-center text-nm-ink shadow-lg shadow-nm-orange/25 shrink-0">
-                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-nm-orange to-nm-yellow flex items-center justify-center text-nm-ink shadow-lg shadow-nm-orange/30 shrink-0">
+                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
                   <div className="text-xs sm:text-sm font-bold text-white font-display flex items-center gap-1.5 sm:gap-2">
-                    Growth Engine
-                    <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping mr-1" />
-                      LIVE ANALYTICS
+                    Company Growth
+                    <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] font-mono bg-nm-orange/20 text-nm-orange border border-nm-orange/40">
+                      2018 — 2026
                     </span>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-slate-400 font-mono">Real-time Performance Scale</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 font-mono">8-Year Business Scale Journey</div>
                 </div>
               </div>
 
-              <div className="text-right">
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-400">Target</div>
-                <div className="text-xs sm:text-sm font-bold text-nm-yellow font-display">+340% YoY</div>
+              <div className="text-right hidden xs:block">
+                <div className="text-[10px] font-mono text-slate-400">Track Record</div>
+                <div className="text-xs sm:text-sm font-bold text-nm-yellow font-display">8+ Yrs Proven</div>
               </div>
             </div>
 
-            {/* Big Stat Summary inside Graph */}
-            <div className="my-4 sm:my-5 relative z-10 flex items-baseline justify-between">
+            {/* Interactive Milestone Switcher Tabs */}
+            <div className="grid grid-cols-3 gap-1.5 my-3.5 p-1 bg-white/5 rounded-xl border border-white/10 relative z-10">
+              {[
+                { key: "campaigns", label: "Campaigns", val: "300+", badge: "+340%" },
+                { key: "clients", label: "Clients", val: "150+", badge: "96.4%" },
+                { key: "experience", label: "Experience", val: "8+ YRS", badge: "Est. 2018" },
+              ].map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => setActiveGrowthTab(item.key)}
+                  className={`p-2 rounded-lg text-left transition-all ${
+                    activeGrowthTab === item.key
+                      ? "bg-gradient-to-r from-nm-orange/20 to-nm-yellow/10 border border-nm-orange/40 shadow-inner"
+                      : "hover:bg-white/5 border border-transparent"
+                  }`}
+                >
+                  <div className="text-[9px] sm:text-[10px] font-mono text-slate-400 flex items-center justify-between">
+                    <span>{item.label}</span>
+                    <span className="text-[8px] text-emerald-400 font-semibold">{item.badge}</span>
+                  </div>
+                  <div className={`text-xs sm:text-sm font-bold font-display ${activeGrowthTab === item.key ? "text-white" : "text-slate-300"}`}>
+                    {item.val}
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Big Growth Stat Summary */}
+            <div className="my-1 relative z-10 flex items-baseline justify-between px-1">
               <div>
-                <div className="text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider">Total Campaign Reach</div>
-                <div className="text-2xl sm:text-4xl font-black text-white font-display tracking-tight mt-0.5 sm:mt-1 flex items-center gap-2">
-                  <span>300+</span>
-                  <span className="text-[10px] sm:text-xs font-mono font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-0.5 sm:gap-1">
-                    <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> +284%
+                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">{currentMetric.label}</div>
+                <div className="text-2xl sm:text-3xl font-black text-white font-display tracking-tight flex items-center gap-2 mt-0.5">
+                  <span>{currentMetric.value}</span>
+                  <span className="text-[10px] sm:text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-0.5">
+                    <ArrowUpRight className="w-3 h-3" /> {currentMetric.growth}
                   </span>
                 </div>
               </div>
-              <div className="hidden xs:block text-right">
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-400">Avg Client ROI</div>
-                <div className="text-base sm:text-lg font-bold text-gradient font-display">4.85x Return</div>
+              <div className="text-right">
+                <div className="text-[10px] font-mono text-slate-400">Milestone</div>
+                <div className="text-xs sm:text-sm font-bold text-nm-yellow font-display">{currentMetric.peak}</div>
               </div>
             </div>
 
-            {/* SVG Animated Growth Curve Line Chart Container */}
-            <div className="relative h-36 sm:h-48 w-full my-2 relative z-10 flex flex-col justify-end overflow-hidden rounded-xl">
-              {/* Background Horizontal Grid Lines */}
-              <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
-                <div className="border-b border-dashed border-white/40 w-full" />
-                <div className="border-b border-dashed border-white/40 w-full" />
-                <div className="border-b border-dashed border-white/40 w-full" />
-                <div className="border-b border-dashed border-white/40 w-full" />
+            {/* Clean 8-Year SVG Growth Graph Component (No moving laser lines or pricing) */}
+            <div className="relative h-44 sm:h-52 w-full my-3 relative z-10 flex flex-col justify-between overflow-hidden rounded-xl bg-slate-950/40 border border-white/5 p-2">
+              
+              {/* Horizontal Dashed Grid Lines & Scale Markers */}
+              <div className="absolute inset-0 px-2 py-3 flex flex-col justify-between pointer-events-none text-[9px] font-mono text-slate-400 opacity-50">
+                <div className="flex justify-between items-center border-b border-dashed border-white/10 pb-1">
+                  <span>300+</span>
+                  <span className="text-[8px] text-nm-yellow">Current Peak</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-dashed border-white/10 pb-1">
+                  <span>225+</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-dashed border-white/10 pb-1">
+                  <span>150+</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-dashed border-white/10 pb-1">
+                  <span>75+</span>
+                </div>
               </div>
 
-              {/* Vertical Laser Scanner Beam moving across graph */}
-              <motion.div
-                className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-nm-yellow via-nm-orange to-transparent opacity-75 z-20 pointer-events-none shadow-[0_0_10px_#FF6B00]"
-                animate={{ left: ["0%", "100%", "0%"] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* SVG Container for Curve */}
-              <svg className="w-full h-full overflow-visible relative z-10" viewBox="0 0 400 160" preserveAspectRatio="none">
+              {/* Clean SVG Canvas */}
+              <svg className="w-full h-full overflow-visible relative z-10 pt-4 pb-2" viewBox="0 0 400 160" preserveAspectRatio="none">
                 <defs>
-                  <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.5" />
-                    <stop offset="50%" stopColor="#FFB800" stopOpacity="0.2" />
+                  {/* Fill Gradient */}
+                  <linearGradient id="growthFillGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.4" />
+                    <stop offset="60%" stopColor="#FFB800" stopOpacity="0.1" />
                     <stop offset="100%" stopColor="#FF6B00" stopOpacity="0" />
                   </linearGradient>
-                  <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                  
+                  {/* Line Gradient */}
+                  <linearGradient id="growthLineGradient" x1="0" y1="0" x2="1" y2="0">
                     <stop offset="0%" stopColor="#FF6B00" />
                     <stop offset="50%" stopColor="#FFB800" />
                     <stop offset="100%" stopColor="#FF2E00" />
                   </linearGradient>
+
+                  {/* Soft Drop Shadow for Stroke Curve */}
+                  <filter id="cleanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="2.5" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
                 </defs>
 
-                {/* Pulsing Area Under Curve */}
-                <motion.path
-                  d="M 0 140 C 60 130, 90 100, 140 95 C 190 90, 230 50, 280 40 C 330 30, 370 15, 400 10 L 400 160 L 0 160 Z"
-                  fill="url(#curveGradient)"
-                  animate={{ opacity: [0.4, 0.75, 0.4] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                {/* Subtle Baseline Reference */}
+                <path
+                  d="M 20 155 C 100 152, 200 148, 370 145"
+                  fill="none"
+                  stroke="#38BDF8"
+                  strokeWidth="1.2"
+                  strokeDasharray="4 4"
+                  opacity="0.35"
                 />
 
-                {/* Dynamic Stroke Path */}
+                {/* Smooth Area Gradient Fill */}
                 <motion.path
-                  d="M 0 140 C 60 130, 90 100, 140 95 C 190 90, 230 50, 280 40 C 330 30, 370 15, 400 10"
+                  key={`fill-${activeGrowthTab}`}
+                  d={currentMetric.dFill}
+                  fill="url(#growthFillGradient)"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                />
+
+                {/* Smooth 8-Year Growth Spline Path */}
+                <motion.path
+                  key={`stroke-${activeGrowthTab}`}
+                  d={currentMetric.dPrimary}
                   fill="none"
-                  stroke="url(#lineGradient)"
-                  strokeWidth="4"
+                  stroke="url(#growthLineGradient)"
+                  strokeWidth="3.5"
                   strokeLinecap="round"
+                  filter="url(#cleanGlow)"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ duration: 2.2, ease: "easeInOut" }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
                 />
 
-                {/* Laser Traveling Dot on Path */}
-                <motion.circle
-                  r="7"
-                  fill="#FFB800"
-                  stroke="#FFFFFF"
-                  strokeWidth="3"
-                  className="drop-shadow-[0_0_12px_rgba(255,184,0,1)]"
-                  animate={{
-                    cx: [0, 60, 140, 280, 400],
-                    cy: [140, 130, 95, 40, 10]
-                  }}
-                  transition={{
-                    duration: 3.5,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-
-                {/* Static Glowing Data Points along Path */}
-                {[
-                  { cx: 0, cy: 140, label: "Q1" },
-                  { cx: 140, cy: 95, label: "Q2" },
-                  { cx: 280, cy: 40, label: "Q3" },
-                  { cx: 400, cy: 10, label: "Q4" },
-                ].map((pt, idx) => (
+                {/* 8 Year Milestone Nodes (2018 - 2026) */}
+                {currentMetric.years.map((pt, idx) => (
                   <g key={idx}>
-                    <motion.circle
-                      cx={pt.cx}
-                      cy={pt.cy}
-                      r="5"
-                      fill="#FF6B00"
-                      stroke="#FFFFFF"
-                      strokeWidth="2"
-                      animate={{ scale: [1, 1.4, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: idx * 0.4 }}
+                    <circle
+                      cx={pt.x}
+                      cy={pt.y}
+                      r="4"
+                      fill="#0B0D17"
+                      stroke={idx === currentMetric.years.length - 1 ? "#FFB800" : "#FF6B00"}
+                      strokeWidth="2.5"
                     />
                   </g>
                 ))}
               </svg>
 
-              {/* Floating Peak Tooltip Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 10, scale: 0.8 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="absolute top-1 sm:top-2 right-1 sm:right-6 bg-[#181B29]/95 border border-nm-orange/50 shadow-[0_0_25px_rgba(255,107,0,0.35)] px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl flex items-center gap-1.5 sm:gap-2 z-20"
-              >
-                <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-nm-yellow" />
-                <span className="text-[10px] sm:text-[11px] font-mono font-bold text-white">Peak Growth: 150+ Clients</span>
-              </motion.div>
+              {/* X-Axis 8-Year Labels */}
+              <div className="flex justify-between px-1 pt-1 border-t border-white/10 text-[9px] font-mono text-slate-400">
+                <span>'18</span>
+                <span>'19</span>
+                <span>'20</span>
+                <span>'21</span>
+                <span>'22</span>
+                <span>'23</span>
+                <span>'24</span>
+                <span className="text-nm-yellow font-bold">'26</span>
+              </div>
+
+              {/* Floating Badge inside Graph */}
+              <div className="absolute top-2 right-4 bg-[#141829]/95 border border-nm-orange/40 shadow-[0_0_20px_rgba(255,107,0,0.25)] px-3 py-1 rounded-lg flex items-center gap-2 z-20">
+                <Sparkles className="w-3 h-3 text-nm-yellow" />
+                <span className="text-[10px] font-mono font-bold text-white">
+                  8+ Years Continuous Growth
+                </span>
+              </div>
             </div>
 
-            {/* Animated Equalizer Bar Chart Rows below */}
-            <div className="pt-3 border-t border-white/10 grid grid-cols-6 gap-1.5 sm:gap-2 items-end h-12 sm:h-14 relative z-10">
+            {/* 8-Year Phase Milestones Breakdown */}
+            <div className="pt-3 border-t border-white/10 space-y-2 relative z-10">
+              <div className="flex justify-between text-[10px] font-mono text-slate-400">
+                <span>8-Year Evolution Phases</span>
+                <span>Scale Milestone</span>
+              </div>
+
               {[
-                { month: "Jan", minH: "20%", maxH: "45%", color: "from-nm-orange/40 to-nm-orange" },
-                { month: "Mar", minH: "30%", maxH: "60%", color: "from-nm-orange/50 to-nm-orange" },
-                { month: "May", minH: "40%", maxH: "75%", color: "from-nm-yellow/60 to-nm-orange" },
-                { month: "Jul", minH: "50%", maxH: "85%", color: "from-nm-yellow to-nm-orange" },
-                { month: "Sep", minH: "65%", maxH: "94%", color: "from-nm-yellow to-nm-red" },
-                { month: "Dec", minH: "80%", maxH: "100%", color: "from-nm-yellow via-nm-orange to-nm-red" },
-              ].map((bar, i) => (
-                <div key={i} className="flex flex-col items-center gap-1 sm:gap-1.5 h-full justify-end group/bar cursor-pointer">
-                  <motion.div
-                    animate={{ height: [bar.minH, bar.maxH, bar.minH] }}
-                    transition={{ duration: 2.2 + i * 0.2, repeat: Infinity, ease: "easeInOut" }}
-                    className={`w-full rounded-t-md sm:rounded-t-lg bg-gradient-to-t ${bar.color} group-hover/bar:brightness-125 transition-all shadow-md`}
-                  />
-                  <span className="text-[8px] sm:text-[9px] font-mono text-slate-400 group-hover/bar:text-white">{bar.month}</span>
+                { phase: "2018-2020: Foundation & Media", status: "Est. Core Services", pct: "100%", width: "100%", gradient: "from-nm-orange/60 to-nm-orange" },
+                { phase: "2021-2023: Performance Scaling", status: "300+ Campaigns", pct: "100%", width: "100%", gradient: "from-nm-yellow/70 to-nm-orange" },
+                { phase: "2024-2026: Full-Funnel Ecosystem", status: "Market Leader", pct: "Peak", width: "100%", gradient: "from-nm-yellow via-nm-orange to-nm-red" },
+              ].map((m, idx) => (
+                <div key={idx} className="space-y-1">
+                  <div className="flex justify-between text-[11px] text-slate-300 font-medium">
+                    <span>{m.phase}</span>
+                    <span className="font-mono text-white font-bold">{m.status}</span>
+                  </div>
+                  <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={statsInView ? { width: m.width } : { width: m.width }}
+                      transition={{ duration: 1.2, delay: idx * 0.2 }}
+                      className={`h-full rounded-full bg-gradient-to-r ${m.gradient}`}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Floating Metric Pill 1 - Top Left */}
+            {/* Floating Milestone Pill 1 - Top Left */}
             <motion.div
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: [0, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 left-1 sm:-top-4 sm:-left-4 bg-[#0F111A]/95 border border-white/20 backdrop-blur-xl px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-2xl flex items-center gap-2 sm:gap-3 z-20"
+              className="absolute -top-3 left-1 sm:-top-4 sm:-left-3 bg-[#0F1221]/95 border border-white/20 backdrop-blur-xl px-3 py-2 rounded-xl shadow-2xl flex items-center gap-2.5 z-20"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-nm-orange/20 flex items-center justify-center text-nm-orange border border-nm-orange/30 shrink-0">
-                <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <div className="w-7 h-7 rounded-lg bg-nm-orange/20 flex items-center justify-center text-nm-orange border border-nm-orange/30 shrink-0">
+                <Award className="w-3.5 h-3.5" />
               </div>
               <div>
-                <div className="text-[11px] sm:text-xs font-bold text-white">ROI Driven</div>
-                <div className="text-[9px] sm:text-[10px] text-slate-300 font-mono">Growth Animated</div>
+                <div className="text-[11px] font-bold text-white">Founded 2018</div>
+                <div className="text-[9px] text-slate-300 font-mono">8+ Years Experience</div>
               </div>
             </motion.div>
 
-            {/* Floating Metric Pill 2 - Bottom Right */}
+            {/* Floating Milestone Pill 2 - Bottom Right */}
             <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-3 right-1 sm:-bottom-4 sm:-right-4 bg-[#0F111A]/95 border border-white/20 backdrop-blur-xl px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-2xl flex items-center gap-2 sm:gap-3 z-20"
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-3 right-1 sm:-bottom-4 sm:-right-3 bg-[#0F1221]/95 border border-white/20 backdrop-blur-xl px-3 py-2 rounded-xl shadow-2xl flex items-center gap-2.5 z-20"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-nm-yellow/20 flex items-center justify-center text-nm-yellow border border-nm-yellow/30 shrink-0">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <div className="w-7 h-7 rounded-lg bg-nm-yellow/20 flex items-center justify-center text-nm-yellow border border-nm-yellow/30 shrink-0">
+                <CheckCircle2 className="w-3.5 h-3.5" />
               </div>
               <div>
-                <div className="text-[11px] sm:text-xs font-bold text-white">300+ Campaigns</div>
-                <div className="text-[9px] sm:text-[10px] text-slate-300 font-mono">150+ Clients</div>
+                <div className="text-[11px] font-bold text-white">300+ Campaigns</div>
+                <div className="text-[9px] text-slate-300 font-mono">150+ Clients</div>
               </div>
             </motion.div>
           </div>
@@ -394,4 +502,5 @@ export default function Hero() {
     </section>
   );
 }
+
 

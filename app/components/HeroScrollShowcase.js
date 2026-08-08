@@ -9,7 +9,7 @@ export default function HeroScrollShowcase() {
   return (
     <section className="bg-[#08090D] relative overflow-hidden border-t border-white/5">
       {/* Background Radial Glow */}
-      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-nm-gradient-glow pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[750px] h-[400px] sm:h-[750px] bg-nm-gradient-glow pointer-events-none" />
 
       <ContainerScroll
         titleComponent={

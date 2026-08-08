@@ -22,7 +22,7 @@ export default function Clients() {
   return (
     <section id="clients" className="bg-[#0D0E15] py-20 overflow-hidden border-t border-b border-white/5 relative">
       {/* Background Glow */}
-      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-nm-orange/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[200px] sm:h-[300px] bg-nm-orange/10 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-nm-orange text-xs font-mono tracking-widest uppercase mb-3 shadow-inner">

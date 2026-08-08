@@ -67,7 +67,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="bg-[#08090D] py-24 md:py-36 overflow-hidden border-t border-white/5 relative">
       {/* Ambient Lighting Orbs */}
-      <div className="hidden sm:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-nm-gradient-glow pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] bg-nm-gradient-glow pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div

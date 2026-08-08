@@ -67,7 +67,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="bg-[#08090D] py-24 md:py-36 overflow-hidden border-t border-white/5 relative">
       {/* Ambient Lighting Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-nm-gradient-glow pointer-events-none" />
+      <div className="hidden sm:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-nm-gradient-glow pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -146,7 +146,7 @@ export default function Portfolio() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="flex gap-6 sm:gap-7">
+          <div className="flex gap-6 sm:gap-7 will-change-transform transform-gpu">
             {filteredItems.map((item) => {
               const impact = portfolioMetrics[item.client] || {
                 metric: "Proven Impact",

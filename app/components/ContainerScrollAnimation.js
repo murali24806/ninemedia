@@ -21,26 +21,27 @@ export const ContainerScroll = ({ titleComponent, children }) => {
   }, []);
 
   const scaleDimensions = () => {
-    return isMobile ? [0.85, 0.98] : [1.03, 1];
+    return isMobile ? [0.95, 1] : [1.03, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [isMobile ? 12 : 20, 0]);
+  // Disable 3D tilt on mobile for buttery smooth 60fps scrolling
+  const rotate = useTransform(scrollYProgress, [0, 1], [isMobile ? 0 : 20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -30 : -80]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -15 : -80]);
 
   return (
     <div
-      className="py-8 sm:py-14 md:py-20 flex items-center justify-center relative p-2 sm:p-6 md:p-8"
+      className="py-6 sm:py-14 md:py-20 flex items-center justify-center relative p-2 sm:p-6 md:p-8"
       ref={containerRef}
     >
       <div
         className="w-full relative"
         style={{
-          perspective: "1000px",
+          perspective: isMobile ? "none" : "1000px",
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Card rotate={rotate} translate={translate} scale={scale} isMobile={isMobile}>
           {children}
         </Card>
       </div>
@@ -54,25 +55,26 @@ export const Header = ({ translate, titleComponent }) => {
       style={{
         translateY: translate,
       }}
-      className="max-w-5xl mx-auto text-center px-4 mb-4 sm:mb-8"
+      className="max-w-5xl mx-auto text-center px-4 mb-4 sm:mb-8 will-change-transform transform-gpu"
     >
       {titleComponent}
     </motion.div>
   );
 };
 
-export const Card = ({ rotate, scale, children }) => {
+export const Card = ({ rotate, scale, children, isMobile }) => {
   return (
     <motion.div
       style={{
         rotateX: rotate,
         scale,
-        boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+        boxShadow: isMobile
+          ? "0 10px 25px -5px rgba(0, 0, 0, 0.5)"
+          : "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl mx-auto min-h-[30rem] sm:min-h-[34rem] md:min-h-[38rem] w-full border-2 sm:border-4 border-[#23283B] p-2 sm:p-4 md:p-6 bg-[#141724] rounded-[24px] sm:rounded-[32px] shadow-2xl shadow-nm-orange/20 relative group hover:border-nm-orange/50 transition-colors flex flex-col"
+      className="max-w-5xl mx-auto min-h-[26rem] sm:min-h-[34rem] md:min-h-[38rem] w-full border-2 sm:border-4 border-[#23283B] p-2 sm:p-4 md:p-6 bg-[#141724] rounded-[20px] sm:rounded-[32px] shadow-2xl shadow-nm-orange/20 relative group hover:border-nm-orange/50 transition-colors flex flex-col will-change-transform transform-gpu"
     >
-      <div className="w-full h-full min-h-[28rem] sm:min-h-[32rem] md:min-h-[35rem] rounded-xl sm:rounded-2xl bg-[#08090D] relative flex flex-col justify-center">
+      <div className="w-full h-full min-h-[24rem] sm:min-h-[32rem] md:min-h-[35rem] rounded-xl sm:rounded-2xl bg-[#08090D] relative flex flex-col justify-center">
         {children}
       </div>
     </motion.div>

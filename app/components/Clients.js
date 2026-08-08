@@ -22,7 +22,7 @@ export default function Clients() {
   return (
     <section id="clients" className="bg-[#0D0E15] py-20 overflow-hidden border-t border-b border-white/5 relative">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-nm-orange/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-nm-orange/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-nm-orange text-xs font-mono tracking-widest uppercase mb-3 shadow-inner">
@@ -42,12 +42,12 @@ export default function Clients() {
         <motion.div
           animate={{ x: ["-50%", "0%"] }}
           transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-          className="flex items-center gap-5 sm:gap-7 py-4 whitespace-nowrap min-w-max"
+          className="flex items-center gap-5 sm:gap-7 py-4 whitespace-nowrap min-w-max will-change-transform transform-gpu"
         >
           {marqueeLogos.map((client, i) => (
             <div
               key={`${client.name}-${i}`}
-              className="h-20 sm:h-24 px-6 sm:px-8 py-3 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-nm-orange/60 hover:bg-white/[0.08] backdrop-blur-md transition-all duration-300 flex items-center justify-center cursor-pointer group shadow-xl hover:shadow-[0_0_30px_rgba(255,107,0,0.2)]"
+              className="h-20 sm:h-24 px-6 sm:px-8 py-3 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-nm-orange/60 hover:bg-white/[0.08] sm:backdrop-blur-md transition-all duration-300 flex items-center justify-center cursor-pointer group shadow-lg sm:shadow-xl hover:shadow-[0_0_30px_rgba(255,107,0,0.2)]"
             >
               <img
                 src={client.src}

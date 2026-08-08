@@ -75,7 +75,7 @@ export default function CaseStudies() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="embla__container flex -ml-6">
+          <div className="embla__container flex -ml-6 will-change-transform transform-gpu">
             {caseStudies.map((cs) => (
               <div
                 key={cs.client}

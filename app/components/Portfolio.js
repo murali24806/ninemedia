@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { portfolioItems, contact } from "./data";
-import { ArrowUpRight, FolderKanban, TrendingUp, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, FolderKanban, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Transparent client logo mappings
 const portfolioLogos = {
@@ -38,6 +38,7 @@ export default function Portfolio() {
     loop: true,
     align: "start",
     slidesToScroll: 1,
+    containScroll: "trimSnaps",
   });
 
   const categories = ["All", ...new Set(portfolioItems.map((item) => item.category))];
@@ -47,12 +48,20 @@ export default function Portfolio() {
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === filter);
 
-  // Auto-slide timer (every 3.2 seconds)
+  // Re-initialize Embla whenever filter selection changes
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.reInit();
+      emblaApi.scrollTo(0);
+    }
+  }, [filter, emblaApi]);
+
+  // Auto-slide timer (every 3.5 seconds)
   useEffect(() => {
     if (!emblaApi || isPaused) return;
     const timer = setInterval(() => {
       emblaApi.scrollNext();
-    }, 3200);
+    }, 3500);
     return () => clearInterval(timer);
   }, [emblaApi, isPaused]);
 
@@ -102,16 +111,9 @@ export default function Portfolio() {
                       key={cat}
                       onClick={() => setFilter(cat)}
                       className={`relative px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                        isActive ? "text-nm-ink" : "text-slate-400 hover:text-white"
+                        isActive ? "text-nm-ink bg-nm-gradient shadow-md" : "text-slate-400 hover:text-white"
                       }`}
                     >
-                      {isActive && (
-                        <motion.div
-                          layoutId="activePortfolioTab"
-                          className="absolute inset-0 bg-nm-gradient rounded-full shadow-lg shadow-nm-orange/30 -z-10"
-                          transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                        />
-                      )}
                       {cat}
                     </button>
                   );
@@ -145,8 +147,10 @@ export default function Portfolio() {
           className="overflow-hidden cursor-grab active:cursor-grabbing"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
         >
-          <div className="flex gap-6 sm:gap-7 will-change-transform transform-gpu">
+          <div className="flex gap-5 sm:gap-7 will-change-transform transform-gpu">
             {filteredItems.map((item) => {
               const impact = portfolioMetrics[item.client] || {
                 metric: "Proven Impact",
@@ -165,35 +169,32 @@ export default function Portfolio() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group rounded-3xl overflow-hidden border border-white/10 bg-[#0F111A] hover:border-nm-orange shadow-2xl hover:shadow-[0_0_50px_rgba(255,107,0,0.25)] transition-all duration-500 flex flex-col justify-between relative hover:-translate-y-2 h-full"
+                    className="group rounded-3xl overflow-hidden border border-white/10 bg-[#0F111A] hover:border-nm-orange shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative hover:-translate-y-1 h-full"
                   >
                     {/* Card Visual Header */}
-                    <div className="min-h-[220px] bg-gradient-to-br from-[#181B2A] via-[#0E1019] to-[#08090D] p-7 flex flex-col justify-between relative overflow-hidden group-hover:from-[#20253B] transition-all duration-500">
-                      {/* Glowing Accent Ring Background */}
-                      <div className="absolute -top-12 -right-12 w-40 h-40 bg-nm-orange/15 rounded-full blur-2xl group-hover:scale-150 group-hover:bg-nm-orange/30 transition-all duration-500" />
-
+                    <div className="min-h-[210px] bg-gradient-to-br from-[#181B2A] via-[#0E1019] to-[#08090D] p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group-hover:from-[#20253B] transition-colors duration-300">
                       {/* Top Row Pills */}
                       <div className="flex justify-between items-center relative z-10">
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 bg-white/10 rounded-full text-nm-yellow border border-white/10 backdrop-blur-md">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 bg-white/10 rounded-full text-nm-yellow border border-white/10">
                           {item.category}
                         </span>
-                        <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-nm-gradient group-hover:text-nm-ink group-hover:border-transparent group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
-                          <ArrowUpRight className="w-5 h-5" />
+                        <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-nm-gradient group-hover:text-nm-ink group-hover:border-transparent transition-all duration-300 shadow-md">
+                          <ArrowUpRight className="w-4 h-4" />
                         </div>
                       </div>
 
                       {/* Middle Client Logo & Title Section */}
-                      <div className="relative z-10 mt-5">
-                        {/* Animated Transparent Logo Image */}
+                      <div className="relative z-10 mt-4">
+                        {/* Transparent Logo Image */}
                         {logoData && (
-                          <div className="mb-4 h-14 flex items-center">
+                          <div className="mb-3 h-12 flex items-center">
                             <img
                               src={logoData.src}
                               alt={item.client}
-                              className={`max-h-12 max-w-[180px] w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 ${
+                              className={`max-h-10 sm:max-h-12 max-w-[170px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
                                 logoData.invertOnDark
-                                  ? "filter invert brightness-200 group-hover:brightness-100 drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
-                                  : "filter brightness-100 drop-shadow-[0_0_12px_rgba(255,107,0,0.3)]"
+                                  ? "filter invert brightness-200 group-hover:brightness-100"
+                                  : "filter brightness-100 group-hover:brightness-110"
                               }`}
                             />
                           </div>
@@ -202,7 +203,7 @@ export default function Portfolio() {
                           <TrendingUp className="w-3.5 h-3.5" />
                           {impact.metric}
                         </div>
-                        <h3 className="font-display font-black text-2xl md:text-3xl text-white group-hover:text-nm-yellow transition-colors leading-tight">
+                        <h3 className="font-display font-black text-xl sm:text-2xl text-white group-hover:text-nm-yellow transition-colors leading-tight">
                           {item.client}
                         </h3>
                         <p className="text-xs text-slate-400 font-medium mt-1">{item.tag}</p>
@@ -210,7 +211,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* Card Footer Details */}
-                    <div className="p-6 border-t border-white/5 bg-[#141724]/60 backdrop-blur-md flex items-center justify-between relative z-10">
+                    <div className="p-5 sm:p-6 border-t border-white/5 bg-[#141724]/95 flex items-center justify-between relative z-10">
                       <div>
                         <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block">Deliverable</span>
                         <span className="text-xs font-semibold text-slate-200 mt-0.5 block">{impact.highlight}</span>

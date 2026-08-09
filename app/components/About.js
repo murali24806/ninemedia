@@ -156,6 +156,26 @@ export default function About() {
             <div className="absolute top-0 left-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-nm-orange/15 rounded-full blur-3xl pointer-events-none" />
 
+            {/* Header Banner Inside Card Image Container */}
+            <div className="relative z-10 mb-3 sm:mb-6 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl bg-white/[0.04] border border-white/10 flex flex-wrap items-center justify-between gap-2 sm:gap-4 backdrop-blur-md">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                  <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-red-500/80 inline-block" />
+                  <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-yellow-500/80 inline-block" />
+                  <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-green-500/80 inline-block" />
+                </div>
+                <span className="font-mono text-[10px] xs:text-[11px] sm:text-xs font-bold tracking-wider text-slate-200 uppercase truncate">
+                  Whole-Brain Growth Engine Architecture
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <span className="w-2 h-2 rounded-full bg-nm-orange animate-ping" />
+                <span className="font-mono text-[9px] xs:text-[10px] sm:text-xs text-nm-yellow font-semibold uppercase tracking-widest">
+                  Live Matrix
+                </span>
+              </div>
+            </div>
+
             {/* 3-Column Layout: Left Explanation Card - Animated Brain Center - Right Explanation Card */}
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr_1.1fr] gap-6 lg:gap-6 items-center relative z-10">
               

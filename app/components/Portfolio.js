@@ -5,13 +5,14 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { portfolioItems, contact } from "./data";
 import { ArrowUpRight, FolderKanban, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
+import PortfolioModal from "./PortfolioModal";
 
 // Transparent client logo mappings
 const portfolioLogos = {
   "SUN International": { src: "/clients/sun_international.png", invertOnDark: false },
   "Hatrick": { src: "/clients/hatrick.png", invertOnDark: true },
-  "Bake House": { src: "/clients/brew_house.png", invertOnDark: false },
-  "The Cloud Overseas": { src: "/clients/the_park.png", invertOnDark: true },
+  "Brew House": { src: "/clients/brew_house.png", invertOnDark: true },
+  "The Park Hotels": { src: "/clients/the_park.png", invertOnDark: true },
   "Somaa": { src: "/clients/somaa.png", invertOnDark: false },
   "TrustLogics": { src: "/clients/trustlogics.png", invertOnDark: true },
   "Vignan's School": { src: "/clients/vignan.png", invertOnDark: false },
@@ -22,8 +23,8 @@ const portfolioLogos = {
 const portfolioMetrics = {
   "SUN International": { metric: "+340% Enquiries", highlight: "Full Admissions Funnel" },
   "Hatrick": { metric: "No.1 Brand Position", highlight: "AP & TG Regional Campaign" },
-  "Bake House": { metric: "+180% Repeat Orders", highlight: "Festive D2C Promotion" },
-  "The Cloud Overseas": { metric: "-42% Cost Per Lead", highlight: "Multi-Country Ad Campaign" },
+  "Brew House": { metric: "+195% Brand Growth", highlight: "Artisanal Cafe Campaign" },
+  "The Park Hotels": { metric: "+210% Direct Bookings", highlight: "Luxury Hospitality Campaign" },
   "Somaa": { metric: "Sold Out Event", highlight: "Nightlife & Music Promo" },
   "TrustLogics": { metric: "+2.5M Impression Reach", highlight: "Brand Identity Revamp" },
   "Vignan's School": { metric: "+220% Parent Leads", highlight: "Admissions Marketing" },
@@ -33,6 +34,7 @@ const portfolioMetrics = {
 export default function Portfolio() {
   const [filter, setFilter] = useState("All");
   const [isPaused, setIsPaused] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -163,13 +165,12 @@ export default function Portfolio() {
                   key={item.client}
                   className="flex-[0_0_88%] xs:flex-[0_0_85%] sm:flex-[0_0_48%] lg:flex-[0_0_31%] min-w-0"
                 >
-                  <a
-                    href={`https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20see%20case%20details%20for%20${encodeURIComponent(
-                      item.client
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group rounded-3xl overflow-hidden border border-white/10 bg-[#0F111A] hover:border-nm-orange shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative hover:-translate-y-1 h-full"
+                  <div
+                    onClick={() => setSelectedItem(item)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === "Enter" && setSelectedItem(item)}
+                    className="group rounded-3xl overflow-hidden border border-white/10 bg-[#0F111A] hover:border-nm-orange shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative hover:-translate-y-1 h-full cursor-pointer text-left"
                   >
                     {/* Card Visual Header */}
                     <div className="min-h-[210px] bg-gradient-to-br from-[#181B2A] via-[#0E1019] to-[#08090D] p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group-hover:from-[#20253B] transition-colors duration-300">
@@ -220,13 +221,23 @@ export default function Portfolio() {
                         View Results <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
-                  </a>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
+
+      {/* Interactive Work Results & Image Gallery Modal */}
+      {selectedItem && (
+        <PortfolioModal
+          item={selectedItem}
+          onClose={() => setSelectedItem(null)}
+          logoData={portfolioLogos[selectedItem.client]}
+          impact={portfolioMetrics[selectedItem.client]}
+        />
+      )}
     </section>
   );
 }

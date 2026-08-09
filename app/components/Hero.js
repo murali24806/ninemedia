@@ -86,7 +86,7 @@ export default function Hero() {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityGraphic = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  const titleWords = ["Digital", "Marketing", "Agency", "Helping", "Brands", "to", "Selling", "More"];
+  const titleWords = ["Digital", "Marketing", "Agency", "Helping", "Brands", "to", "Selling", "More."];
 
   return (
     <section
@@ -124,9 +124,9 @@ export default function Hero() {
           </div>
 
           {/* Dynamic Animated Title */}
-          <h1 className="font-display font-black text-white text-[2.2rem] xs:text-[2.7rem] sm:text-[3.8rem] lg:text-[4.4rem] leading-[1.08] tracking-tight">
+          <h1 className="font-display font-black text-white text-[1.9rem] xs:text-[2.5rem] sm:text-[3.6rem] md:text-[4rem] lg:text-[4.4rem] leading-[1.08] tracking-tight break-words">
             {titleWords.map((word, i) => (
-              <span key={i} className="inline-block mr-[0.2em] sm:mr-[0.25em]">
+              <span key={i} className="inline-block mr-[0.18em] xs:mr-[0.2em] sm:mr-[0.25em]">
                 {i >= 6 ? (
                   <span className="text-gradient drop-shadow-[0_0_25px_rgba(255,107,0,0.4)]">
                     {word}{" "}

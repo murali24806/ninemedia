@@ -3,21 +3,19 @@ export default function sitemap() {
   const currentDate = new Date().toISOString();
 
   const routes = [
-    "",
-    "/#about",
-    "/#services",
-    "/#portfolio",
-    "/#case-studies",
-    "/#testimonials",
-    "/#faq",
-    "/#careers",
-    "/#contact",
+    { url: "", priority: 1.0, changeFrequency: "daily" },
+    { url: "/about", priority: 0.9, changeFrequency: "weekly" },
+    { url: "/services", priority: 0.9, changeFrequency: "weekly" },
+    { url: "/portfolio", priority: 0.9, changeFrequency: "weekly" },
+    { url: "/case-studies", priority: 0.9, changeFrequency: "weekly" },
+    { url: "/careers", priority: 0.8, changeFrequency: "weekly" },
+    { url: "/contact", priority: 0.8, changeFrequency: "weekly" },
   ];
 
   return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${baseUrl}${route.url}`,
     lastModified: currentDate,
-    changeFrequency: route === "" ? "daily" : "weekly",
-    priority: route === "" ? 1.0 : 0.8,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
 }

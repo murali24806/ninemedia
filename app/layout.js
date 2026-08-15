@@ -5,24 +5,36 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp";
 export const metadata = {
   metadataBase: new URL("https://ninemedia.in"),
   title: {
-    default: "Nine Media | Integrated Branding & Digital Marketing Agency",
-    template: "%s | Nine Media",
+    default: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
+    template: "%s | Nine Media Hyderabad",
   },
   description:
-    "Nine Media is an integrated branding & digital marketing agency helping brands sell more since 2018. Web design, digital marketing, video production, and social media growth.",
+    "Nine Media is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Expert web design, Meta ads, SEO, video production, and SMM.",
   keywords: [
     "Nine Media",
-    "Digital Marketing Agency",
+    "Nine Media Hyderabad",
+    "Digital Marketing Agency Hyderabad",
     "Branding Agency Hyderabad",
-    "Web Design Hyderabad",
-    "SEO Services",
-    "Meta Ads",
-    "Video Production",
-    "Social Media Marketing",
+    "Best Digital Marketing Agency in Hyderabad",
+    "Web Design Agency Hyderabad",
+    "SEO Services Hyderabad",
+    "Meta Ads Agency",
+    "Video Production House Hyderabad",
+    "Social Media Marketing Agency",
+    "Performance Marketing Hyderabad",
+    "Integrated Marketing Agency",
   ],
-  authors: [{ name: "Nine Media Brand Solutions" }],
-  creator: "Nine Media",
-  publisher: "Nine Media",
+  authors: [{ name: "Nine Media Brand Solutions", url: "https://ninemedia.in" }],
+  creator: "Nine Media Brand Solutions",
+  publisher: "Nine Media Brand Solutions",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "https://ninemedia.in",
+  },
   icons: {
     icon: [
       { url: "/logo-icon.png", type: "image/png" },
@@ -32,9 +44,9 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Nine Media | Integrated Branding & Digital Marketing Agency",
+    title: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
     description:
-      "Nine Media is an integrated branding & digital marketing agency helping brands sell more since 2018. Web design, digital marketing, video production, and social media growth.",
+      "Nine Media is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Web design, Meta ads, SEO, video production & SMM under one roof.",
     url: "https://ninemedia.in",
     siteName: "Nine Media Brand Solutions",
     images: [
@@ -42,13 +54,13 @@ export const metadata = {
         url: "/logo-icon.png",
         width: 512,
         height: 512,
-        alt: "Nine Media Logo Icon",
+        alt: "Nine Media Brand Solutions Logo Icon",
       },
       {
         url: "/logo-full.png",
         width: 1200,
         height: 630,
-        alt: "Nine Media Brand Solutions",
+        alt: "Nine Media Brand Solutions - Integrated Marketing Agency",
       },
     ],
     locale: "en_US",
@@ -56,36 +68,49 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nine Media | Integrated Branding & Digital Marketing Agency",
+    title: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
     description:
-      "Integrated branding & digital marketing agency helping brands sell more since 2018.",
+      "Top integrated branding & digital marketing agency in Hyderabad helping brands scale since 2018.",
     images: ["/logo-icon.png"],
+    creator: "@ninemediain",
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
+  other: {
+    "geo.region": "IN-TG",
+    "geo.placename": "Hyderabad",
+    "geo.position": "17.385044;78.486671",
+    ICBM: "17.385044, 78.486671",
+  },
 };
 
-const jsonLd = {
+const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://ninemedia.in/#organization",
   name: "Nine Media Brand Solutions",
+  alternateName: "Nine Media",
   url: "https://ninemedia.in",
   logo: "https://ninemedia.in/logo-icon.png",
-  image: "https://ninemedia.in/logo-icon.png",
+  image: "https://ninemedia.in/logo-full.png",
   description:
-    "Integrated branding & digital marketing agency helping brands sell more since 2018.",
+    "Top integrated branding & digital marketing agency in Hyderabad helping client brands scale sales revenue, digital presence, and customer engagement since 2018.",
+  foundingDate: "2018",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
     addressCountry: "IN",
   },
   contactPoint: {
@@ -93,7 +118,111 @@ const jsonLd = {
     telephone: "+91-9063483601",
     contactType: "customer service",
     email: "ninemedia.in@gmail.com",
+    areaServed: ["IN", "Worldwide"],
+    availableLanguage: ["English", "Hindi", "Telugu"],
   },
+  sameAs: [
+    "https://www.instagram.com/ninemediain",
+    "https://www.linkedin.com/company/ninemediain",
+  ],
+};
+
+const jsonLdLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://ninemedia.in/#localbusiness",
+  name: "Nine Media Brand Solutions - Digital Marketing Agency Hyderabad",
+  image: "https://ninemedia.in/logo-full.png",
+  url: "https://ninemedia.in",
+  telephone: "+91-9063483601",
+  email: "ninemedia.in@gmail.com",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
+    postalCode: "500081",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 17.385044,
+    longitude: 78.486671,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:30",
+      closes: "19:00",
+    },
+  ],
+};
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://ninemedia.in/#website",
+  url: "https://ninemedia.in",
+  name: "Nine Media Brand Solutions",
+  description: "Integrated Branding & Digital Marketing Agency in Hyderabad",
+  publisher: {
+    "@id": "https://ninemedia.in/#organization",
+  },
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How quickly can Nine Media launch our marketing campaign?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Initial strategy alignment and onboarding take 3-5 days. For digital ads and social media management, campaigns can go live within 7 business days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you handle custom video production and corporate films?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes! Nine Media provides full-service video production from script writing, filming, equipment setup, motion design to post-production editing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What makes Nine Media different from traditional agencies?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We bridge traditional branding with data-driven performance digital marketing. One accountable team handles your design, ad spend, and content.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is Nine Media located?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our headquarters are located in Hyderabad. We serve client brands across India and internationally.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can we get a custom tailored marketing package?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Absolutely! We create custom growth retainers based on your exact targets, ad spend, and brand assets. Contact us on WhatsApp or email for a custom quote.",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -115,7 +244,14 @@ export default function RootLayout({ children }) {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              jsonLdOrganization,
+              jsonLdLocalBusiness,
+              jsonLdWebSite,
+              jsonLdFaq,
+            ]),
+          }}
         />
       </head>
       <body className="font-body antialiased">

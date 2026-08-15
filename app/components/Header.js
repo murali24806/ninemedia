@@ -6,6 +6,7 @@ import { contact } from "./data";
 import { Phone, MessageCircle } from "lucide-react";
 
 const LINKS = [
+  { href: "#top", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },

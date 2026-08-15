@@ -225,6 +225,56 @@ const jsonLdFaq = {
   ],
 };
 
+const jsonLdSiteNavigation = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Site Navigation Sitelinks",
+  itemListElement: [
+    {
+      "@type": "SiteNavigationElement",
+      position: 1,
+      name: "About Agency",
+      description: "Learn about Nine Media's whole-brain marketing & strategy team",
+      url: "https://ninemedia.in/#about",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 2,
+      name: "Core Solutions",
+      description: "Integrated web design, Meta ads, SEO, video production & SMM",
+      url: "https://ninemedia.in/#services",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 3,
+      name: "Selected Work",
+      description: "Explore our portfolio of high-converting brand campaigns",
+      url: "https://ninemedia.in/#portfolio",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 4,
+      name: "Case Studies",
+      description: "Proven track record of growth metrics delivered for client brands",
+      url: "https://ninemedia.in/#case-studies",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 5,
+      name: "Careers",
+      description: "Join Nine Media's creative marketing team in Hyderabad",
+      url: "https://ninemedia.in/#careers",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 6,
+      name: "Contact Us",
+      description: "Get in touch for a custom brand growth strategy",
+      url: "https://ninemedia.in/#contact",
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -250,6 +300,7 @@ export default function RootLayout({ children }) {
               jsonLdLocalBusiness,
               jsonLdWebSite,
               jsonLdFaq,
+              jsonLdSiteNavigation,
             ]),
           }}
         />

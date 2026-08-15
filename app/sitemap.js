@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://ninemedia.in";
+  const baseUrl = "https://www.ninemedia.co.in";
   const currentDate = new Date().toISOString();
 
   const routes = [

@@ -3,7 +3,7 @@ import CustomCursor from "./components/CustomCursor";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export const metadata = {
-  metadataBase: new URL("https://ninemedia.in"),
+  metadataBase: new URL("https://www.ninemedia.co.in"),
   title: {
     default: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
     template: "%s | Nine Media Hyderabad",
@@ -24,7 +24,7 @@ export const metadata = {
     "Performance Marketing Hyderabad",
     "Integrated Marketing Agency",
   ],
-  authors: [{ name: "Nine Media Brand Solutions", url: "https://ninemedia.in" }],
+  authors: [{ name: "Nine Media Brand Solutions", url: "https://www.ninemedia.co.in" }],
   creator: "Nine Media Brand Solutions",
   publisher: "Nine Media Brand Solutions",
   formatDetection: {
@@ -33,7 +33,7 @@ export const metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://ninemedia.in",
+    canonical: "https://www.ninemedia.co.in",
   },
   icons: {
     icon: [
@@ -47,7 +47,7 @@ export const metadata = {
     title: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
     description:
       "Nine Media is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Web design, Meta ads, SEO, video production & SMM under one roof.",
-    url: "https://ninemedia.in",
+    url: "https://www.ninemedia.co.in",
     siteName: "Nine Media Brand Solutions",
     images: [
       {
@@ -98,12 +98,12 @@ export const metadata = {
 const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://ninemedia.in/#organization",
+  "@id": "https://www.ninemedia.co.in/#organization",
   name: "Nine Media Brand Solutions",
   alternateName: "Nine Media",
-  url: "https://ninemedia.in",
-  logo: "https://ninemedia.in/logo-icon.png",
-  image: "https://ninemedia.in/logo-full.png",
+  url: "https://www.ninemedia.co.in",
+  logo: "https://www.ninemedia.co.in/logo-icon.png",
+  image: "https://www.ninemedia.co.in/logo-full.png",
   description:
     "Top integrated branding & digital marketing agency in Hyderabad helping client brands scale sales revenue, digital presence, and customer engagement since 2018.",
   foundingDate: "2018",
@@ -130,10 +130,10 @@ const jsonLdOrganization = {
 const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://ninemedia.in/#localbusiness",
+  "@id": "https://www.ninemedia.co.in/#localbusiness",
   name: "Nine Media Brand Solutions - Digital Marketing Agency Hyderabad",
-  image: "https://ninemedia.in/logo-full.png",
-  url: "https://ninemedia.in",
+  image: "https://www.ninemedia.co.in/logo-full.png",
+  url: "https://www.ninemedia.co.in",
   telephone: "+91-9063483601",
   email: "ninemedia.in@gmail.com",
   priceRange: "$$",
@@ -169,12 +169,12 @@ const jsonLdLocalBusiness = {
 const jsonLdWebSite = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://ninemedia.in/#website",
-  url: "https://ninemedia.in",
+  "@id": "https://www.ninemedia.co.in/#website",
+  url: "https://www.ninemedia.co.in",
   name: "Nine Media Brand Solutions",
   description: "Integrated Branding & Digital Marketing Agency in Hyderabad",
   publisher: {
-    "@id": "https://ninemedia.in/#organization",
+    "@id": "https://www.ninemedia.co.in/#organization",
   },
 };
 
@@ -235,42 +235,42 @@ const jsonLdSiteNavigation = {
       position: 1,
       name: "About Us",
       description: "Learn about Nine Media's whole-brain marketing & strategy team",
-      url: "https://ninemedia.in/about",
+      url: "https://www.ninemedia.co.in/about",
     },
     {
       "@type": "SiteNavigationElement",
       position: 2,
       name: "Core Services",
       description: "Integrated web design, Meta ads, SEO, video production & SMM",
-      url: "https://ninemedia.in/services",
+      url: "https://www.ninemedia.co.in/services",
     },
     {
       "@type": "SiteNavigationElement",
       position: 3,
       name: "Portfolio",
       description: "Explore our portfolio of high-converting brand campaigns",
-      url: "https://ninemedia.in/portfolio",
+      url: "https://www.ninemedia.co.in/portfolio",
     },
     {
       "@type": "SiteNavigationElement",
       position: 4,
       name: "Case Studies",
       description: "Proven track record of growth metrics delivered for client brands",
-      url: "https://ninemedia.in/case-studies",
+      url: "https://www.ninemedia.co.in/case-studies",
     },
     {
       "@type": "SiteNavigationElement",
       position: 5,
       name: "Careers",
       description: "Join Nine Media's creative marketing team in Hyderabad",
-      url: "https://ninemedia.in/careers",
+      url: "https://www.ninemedia.co.in/careers",
     },
     {
       "@type": "SiteNavigationElement",
       position: 6,
       name: "Contact Us",
       description: "Get in touch for a custom brand growth strategy",
-      url: "https://ninemedia.in/contact",
+      url: "https://www.ninemedia.co.in/contact",
     },
   ],
 };

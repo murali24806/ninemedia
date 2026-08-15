@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://ninemedia.in/sitemap.xml",
+    sitemap: "https://www.ninemedia.co.in/sitemap.xml",
   };
 }

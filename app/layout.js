@@ -87,7 +87,11 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "SkOBm5tvLeHcmDoFKgPvjK3H22NKdG6QCzbOUJXcSBY",
+  },
   other: {
+    "google-site-verification": "SkOBm5tvLeHcmDoFKgPvjK3H22NKdG6QCzbOUJXcSBY",
     "geo.region": "IN-TG",
     "geo.placename": "Hyderabad",
     "geo.position": "17.385044;78.486671",
@@ -279,6 +283,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="SkOBm5tvLeHcmDoFKgPvjK3H22NKdG6QCzbOUJXcSBY" />
         <link rel="icon" href="/logo-icon.png" type="image/png" sizes="any" />
         <link rel="shortcut icon" href="/logo-icon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

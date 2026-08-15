@@ -5,24 +5,29 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp";
 export const metadata = {
   metadataBase: new URL("https://www.ninemedia.co.in"),
   title: {
-    default: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
-    template: "%s | Nine Media Hyderabad",
+    default: "Nine Media Brand Solutions | Integrated Branding & Digital Marketing Agency Hyderabad",
+    template: "%s | Nine Media Brand Solutions",
   },
   description:
-    "Nine Media is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Expert web design, Meta ads, SEO, video production, and SMM.",
+    "Nine Media Brand Solutions is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Expert web design, Meta ads, SEO, video production, and SMM.",
   keywords: [
+    "Nine Media Brand Solutions",
+    "nine media brand solutions",
+    "Nine Media Brand Solutions Hyderabad",
     "Nine Media",
+    "nine media",
+    "ninemedia",
     "Nine Media Hyderabad",
     "Digital Marketing Agency Hyderabad",
     "Branding Agency Hyderabad",
     "Best Digital Marketing Agency in Hyderabad",
     "Web Design Agency Hyderabad",
     "SEO Services Hyderabad",
-    "Meta Ads Agency",
+    "Meta Ads Agency Hyderabad",
     "Video Production House Hyderabad",
-    "Social Media Marketing Agency",
+    "Social Media Marketing Agency Hyderabad",
     "Performance Marketing Hyderabad",
-    "Integrated Marketing Agency",
+    "Integrated Marketing Agency Hyderabad",
   ],
   authors: [{ name: "Nine Media Brand Solutions", url: "https://www.ninemedia.co.in" }],
   creator: "Nine Media Brand Solutions",
@@ -44,9 +49,9 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
+    title: "Nine Media Brand Solutions | Integrated Branding & Digital Marketing Agency Hyderabad",
     description:
-      "Nine Media is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Web design, Meta ads, SEO, video production & SMM under one roof.",
+      "Nine Media Brand Solutions is a top integrated branding & digital marketing agency in Hyderabad helping brands sell more since 2018. Web design, Meta ads, SEO, video production & SMM under one roof.",
     url: "https://www.ninemedia.co.in",
     siteName: "Nine Media Brand Solutions",
     images: [
@@ -68,9 +73,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nine Media | Integrated Branding & Digital Marketing Agency Hyderabad",
+    title: "Nine Media Brand Solutions | Integrated Branding & Digital Marketing Agency Hyderabad",
     description:
-      "Top integrated branding & digital marketing agency in Hyderabad helping brands scale since 2018.",
+      "Nine Media Brand Solutions is a top integrated branding & digital marketing agency in Hyderabad helping brands scale since 2018.",
     images: ["/logo-icon.png"],
     creator: "@ninemediain",
   },

@@ -38,7 +38,7 @@ export default function Clients() {
       </div>
 
       {/* Infinite Marquee Track (Left to Right Animation) */}
-      <div className="relative w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] relative z-10">
+      <div className="relative w-full overflow-hidden flex mask-marquee z-10">
         <motion.div
           animate={{ x: ["0%", "-33.33333%"] }}
           transition={{ duration: 28, repeat: Infinity, ease: "linear" }}

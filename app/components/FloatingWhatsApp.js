@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
   const whatsappUrl = `https://wa.me/${contact.whatsappRaw}?text=Hello%20Nine%20Media%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-3 touch-manipulation">
       {/* Hover Tooltip */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}

@@ -78,13 +78,13 @@ export default function Testimonials() {
           </div>
 
           {/* Slider Navigation Arrows & Dots */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               {scrollSnaps.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => scrollTo(idx)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 rounded-full transition-all duration-300 touch-manipulation ${
                     selectedIndex === idx
                       ? "w-8 bg-nm-gradient shadow-lg shadow-nm-orange/30"
                       : "w-2.5 bg-white/20 hover:bg-white/40"
@@ -94,17 +94,17 @@ export default function Testimonials() {
               ))}
             </div>
 
-            <div className="flex gap-2.5">
+            <div className="flex gap-2">
               <button
                 onClick={scrollPrev}
-                className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-nm-gradient hover:text-nm-ink hover:border-transparent transition-all duration-300 shadow-lg active:scale-95"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-nm-gradient hover:text-nm-ink hover:border-transparent transition-all duration-300 shadow-lg active:scale-95 touch-manipulation"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={scrollNext}
-                className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-nm-gradient hover:text-nm-ink hover:border-transparent transition-all duration-300 shadow-lg active:scale-95"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-nm-gradient hover:text-nm-ink hover:border-transparent transition-all duration-300 shadow-lg active:scale-95 touch-manipulation"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -121,15 +121,15 @@ export default function Testimonials() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
-          <div className="embla__container flex -ml-6">
+          <div className="embla__container flex -ml-4 sm:-ml-6">
             {testimonials.map((t, idx) => (
               <div
                 key={t.brand}
-                className="embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] pl-6"
+                className="embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] pl-4 sm:pl-6"
               >
-                <div className="rounded-3xl p-8 md:p-10 bg-[#141724]/90 border border-white/10 hover:border-nm-orange/50 transition-all duration-500 h-full flex flex-col justify-between shadow-2xl relative group hover:-translate-y-1">
-                  <div className="absolute top-6 right-6 text-white/10 group-hover:text-nm-orange/20 transition-colors">
-                    <Quote className="w-12 h-12" />
+                <div className="rounded-3xl p-6 sm:p-8 md:p-10 bg-[#141724]/90 border border-white/10 hover:border-nm-orange/50 transition-all duration-500 h-full flex flex-col justify-between shadow-2xl relative group hover:-translate-y-1">
+                  <div className="absolute top-5 right-5 sm:top-6 sm:right-6 text-white/10 group-hover:text-nm-orange/20 transition-colors">
+                    <Quote className="w-9 h-9 sm:w-12 sm:h-12" />
                   </div>
 
                   <div>

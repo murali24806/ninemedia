@@ -35,10 +35,10 @@ export default function Careers() {
             {roles.map((r) => (
               <div
                 key={r.title}
-                className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#141724] p-6 hover:border-nm-orange/40 transition-all group"
+                className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 rounded-2xl border border-white/10 bg-[#141724] p-5 sm:p-6 hover:border-nm-orange/40 transition-all group"
               >
                 <div>
-                  <h3 className="font-display font-bold text-lg text-white group-hover:text-nm-yellow transition-colors">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-nm-yellow transition-colors">
                     {r.title}
                   </h3>
                   <p className="text-xs text-slate-400 mt-1 font-mono">{r.type}</p>
@@ -47,7 +47,7 @@ export default function Careers() {
                   href={`mailto:${contact.email}?subject=${encodeURIComponent(
                     "Job Application: " + r.title
                   )}`}
-                  className="shrink-0 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-nm-orange group-hover:bg-nm-gradient group-hover:text-nm-ink group-hover:border-transparent transition-all flex items-center gap-1"
+                  className="shrink-0 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-nm-orange group-hover:bg-nm-gradient group-hover:text-nm-ink group-hover:border-transparent transition-all flex items-center gap-1 self-start sm:self-auto touch-manipulation"
                 >
                   Apply Now
                   <ArrowUpRight className="w-3.5 h-3.5" />

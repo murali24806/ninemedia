@@ -3,16 +3,16 @@ import { MessageCircle, Mail, Phone, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#05060A] py-14 border-t border-white/10 relative text-slate-400">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+    <footer className="bg-[#05060A] py-10 sm:py-14 border-t border-white/10 relative text-slate-400">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 pb-10 sm:pb-12 border-b border-white/10">
           {/* Col 1 - Brand Info */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="sm:col-span-2 space-y-4">
             <a href="#top" className="inline-block">
               <img
                 src="/logo-full.png"
                 alt="Nine Media Brand Solutions"
-                className="h-14 md:h-16 w-auto object-contain"
+                className="h-11 sm:h-14 md:h-16 w-auto object-contain object-left"
               />
             </a>
             <p className="text-xs leading-relaxed max-w-sm text-slate-400">

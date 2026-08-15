@@ -177,27 +177,27 @@ export default function About() {
             </div>
 
             {/* 3-Column Layout: Left Explanation Card - Animated Brain Center - Right Explanation Card */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr_1.1fr] gap-6 lg:gap-6 items-center relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr_1.1fr] gap-4 sm:gap-6 items-center relative z-10">
               
               {/* LEFT SIDE EXPLANATION: 01 / LEFT BRAIN */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-blue-950/40 via-[#0F1424] to-[#0A0C16] border border-blue-500/30 relative shadow-xl hover:border-blue-400/60 transition-all group/left">
-                <div className="flex items-center justify-between border-b border-blue-500/20 pb-3 mb-4">
+              <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-b from-blue-950/40 via-[#0F1424] to-[#0A0C16] border border-blue-500/30 relative shadow-xl hover:border-blue-400/60 transition-all group/left">
+                <div className="flex items-center justify-between border-b border-blue-500/20 pb-3 mb-3 sm:mb-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
                       <Target className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="font-mono text-[10px] text-blue-400 tracking-widest uppercase font-bold block">01 / LEFT BRAIN</span>
-                      <h4 className="font-display font-bold text-base sm:text-lg text-white group-hover/left:text-blue-300 transition-colors">Data Strategy</h4>
+                      <span className="font-mono text-[9px] sm:text-[10px] text-blue-400 tracking-widest uppercase font-bold block">01 / LEFT BRAIN</span>
+                      <h4 className="font-display font-bold text-sm sm:text-lg text-white group-hover/left:text-blue-300 transition-colors">Data Strategy</h4>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full border border-blue-500/20">
+                  <span className="text-[9px] sm:text-[10px] font-mono font-bold text-blue-400 bg-blue-500/10 px-2 sm:px-2.5 py-1 rounded-full border border-blue-500/20 shrink-0">
                     Analytical Engine
                   </span>
                 </div>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/20">
-                  <ArrowRight className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/20">
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0 mt-0.5" />
                   <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
                     SEO, SEM, Meta Ads, Audience Funnels, Analytics &amp; Conversion Optimization.
                   </p>
@@ -209,27 +209,11 @@ export default function About() {
                 {/* Pulsing Ambient Halo behind Brain */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-nm-orange/30 blur-2xl animate-pulse-slow pointer-events-none" />
 
-                {/* Connecting Energy Beams (SVG Dashed Lines) */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block overflow-visible" viewBox="0 0 300 300">
-                  <motion.line
-                    x1="20" y1="150" x2="100" y2="150"
-                    stroke="#3B82F6" strokeWidth="2" strokeDasharray="6 6"
-                    animate={{ strokeDashoffset: [0, -24] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                  />
-                  <motion.line
-                    x1="200" y1="150" x2="280" y2="150"
-                    stroke="#FF6B00" strokeWidth="2" strokeDasharray="6 6"
-                    animate={{ strokeDashoffset: [0, 24] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                  />
-                </svg>
-
                 {/* Floating Animated Brain Element */}
                 <motion.div
-                  animate={{ y: [0, -10, 0], scale: [1, 1.03, 1] }}
+                  animate={{ y: [0, -8, 0], scale: [1, 1.03, 1] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative z-10 w-44 sm:w-56 lg:w-64 aspect-square flex items-center justify-center filter drop-shadow-[0_0_35px_rgba(255,107,0,0.35)]"
+                  className="relative z-10 w-36 xs:w-44 sm:w-56 lg:w-60 aspect-square flex items-center justify-center filter drop-shadow-[0_0_35px_rgba(255,107,0,0.35)]"
                 >
                   <img
                     src={transparentBrainImg || "/brain-strategy.jpg"}
@@ -239,31 +223,31 @@ export default function About() {
                 </motion.div>
 
                 {/* Center Brain Badge */}
-                <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-slate-200 text-[11px] font-mono font-semibold shadow-lg backdrop-blur-md">
-                  <Brain className="w-3.5 h-3.5 text-nm-yellow" />
+                <div className="mt-2 sm:mt-3 inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/5 border border-white/15 text-slate-200 text-[10px] sm:text-[11px] font-mono font-semibold shadow-lg backdrop-blur-md">
+                  <Brain className="w-3.5 h-3.5 text-nm-yellow shrink-0" />
                   <span>Unified Growth Engine</span>
                 </div>
               </div>
 
               {/* RIGHT SIDE EXPLANATION: 02 / RIGHT BRAIN */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-nm-orange/20 via-[#1C1410] to-[#0A0C16] border border-nm-orange/40 relative shadow-xl hover:border-nm-orange/70 transition-all group/right">
-                <div className="flex items-center justify-between border-b border-nm-orange/20 pb-3 mb-4">
+              <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-b from-nm-orange/20 via-[#1C1410] to-[#0A0C16] border border-nm-orange/40 relative shadow-xl hover:border-nm-orange/70 transition-all group/right">
+                <div className="flex items-center justify-between border-b border-nm-orange/20 pb-3 mb-3 sm:mb-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-nm-orange/20 border border-nm-orange/30 flex items-center justify-center text-nm-yellow">
+                    <div className="w-8 h-8 rounded-lg bg-nm-orange/20 border border-nm-orange/30 flex items-center justify-center text-nm-yellow shrink-0">
                       <Zap className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="font-mono text-[10px] text-nm-yellow tracking-widest uppercase font-bold block">02 / RIGHT BRAIN</span>
-                      <h4 className="font-display font-bold text-base sm:text-lg text-white group-hover/right:text-nm-yellow transition-colors">Creative Magic</h4>
+                      <span className="font-mono text-[9px] sm:text-[10px] text-nm-yellow tracking-widest uppercase font-bold block">02 / RIGHT BRAIN</span>
+                      <h4 className="font-display font-bold text-sm sm:text-lg text-white group-hover/right:text-nm-yellow transition-colors">Creative Magic</h4>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-nm-yellow bg-nm-orange/10 px-2.5 py-1 rounded-full border border-nm-orange/30">
+                  <span className="text-[9px] sm:text-[10px] font-mono font-bold text-nm-yellow bg-nm-orange/10 px-2 sm:px-2.5 py-1 rounded-full border border-nm-orange/30 shrink-0">
                     Visual Engine
                   </span>
                 </div>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-nm-orange/10 border border-nm-orange/20">
-                  <ArrowRight className="w-5 h-5 text-nm-yellow shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-nm-orange/10 border border-nm-orange/20">
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-nm-yellow shrink-0 mt-0.5" />
                   <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
                     Logo Design, Brand Identity, Motion Graphics &amp; Video Production.
                   </p>

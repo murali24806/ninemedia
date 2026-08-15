@@ -105,14 +105,14 @@ export default function Portfolio() {
 
             <div className="flex flex-wrap items-center gap-3">
               {/* Category Filter Tabs */}
-              <div className="flex flex-wrap gap-2 bg-white/5 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+              <div className="flex flex-wrap gap-1.5 xs:gap-2 bg-white/5 p-1 sm:p-1.5 rounded-2xl sm:rounded-full border border-white/10 backdrop-blur-md max-w-full">
                 {categories.map((cat) => {
                   const isActive = filter === cat;
                   return (
                     <button
                       key={cat}
                       onClick={() => setFilter(cat)}
-                      className={`relative px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                      className={`relative px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                         isActive ? "text-nm-ink bg-nm-gradient shadow-md" : "text-slate-400 hover:text-white"
                       }`}
                     >
@@ -126,14 +126,14 @@ export default function Portfolio() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={scrollPrev}
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-nm-orange/60 hover:bg-white/10 text-white flex items-center justify-center transition-all shadow-lg active:scale-95"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-nm-orange/60 hover:bg-white/10 text-white flex items-center justify-center transition-all shadow-lg active:scale-95 touch-manipulation"
                   aria-label="Previous Slide"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={scrollNext}
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-nm-orange/60 hover:bg-white/10 text-white flex items-center justify-center transition-all shadow-lg active:scale-95"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-nm-orange/60 hover:bg-white/10 text-white flex items-center justify-center transition-all shadow-lg active:scale-95 touch-manipulation"
                   aria-label="Next Slide"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -152,7 +152,7 @@ export default function Portfolio() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
-          <div className="flex gap-5 sm:gap-7 will-change-transform transform-gpu">
+          <div className="flex gap-4 sm:gap-7 will-change-transform transform-gpu">
             {filteredItems.map((item) => {
               const impact = portfolioMetrics[item.client] || {
                 metric: "Proven Impact",
@@ -163,7 +163,7 @@ export default function Portfolio() {
               return (
                 <div
                   key={item.client}
-                  className="flex-[0_0_88%] xs:flex-[0_0_85%] sm:flex-[0_0_48%] lg:flex-[0_0_31%] min-w-0"
+                  className="flex-[0_0_90%] xs:flex-[0_0_82%] sm:flex-[0_0_48%] lg:flex-[0_0_31%] min-w-0"
                 >
                   <div
                     onClick={() => setSelectedItem(item)}

@@ -124,9 +124,9 @@ export default function Hero() {
           </div>
 
           {/* Dynamic Animated Title */}
-          <h1 className="font-display font-black text-white text-[1.9rem] xs:text-[2.5rem] sm:text-[3.6rem] md:text-[4rem] lg:text-[4.4rem] leading-[1.08] tracking-tight break-words">
+          <h1 className="font-display font-black text-white text-[1.8rem] xs:text-[2.3rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.4rem] leading-[1.08] tracking-tight break-words">
             {titleWords.map((word, i) => (
-              <span key={i} className="inline-block mr-[0.18em] xs:mr-[0.2em] sm:mr-[0.25em]">
+              <span key={i} className="inline-block mr-[0.16em] xs:mr-[0.2em] sm:mr-[0.25em]">
                 {i >= 6 ? (
                   <span className="text-gradient drop-shadow-[0_0_25px_rgba(255,107,0,0.4)]">
                     {word}{" "}
@@ -165,21 +165,21 @@ export default function Hero() {
           </div>
 
           {/* Feature Highlights Bar with Animated Stats & Increasing Bar */}
-          <div ref={statsRef} className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-3 gap-2.5 sm:gap-4">
+          <div ref={statsRef} className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-3 gap-1.5 xs:gap-2.5 sm:gap-4">
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group hover:border-nm-orange/40 transition-colors"
+              className="p-2 xs:p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group hover:border-nm-orange/40 transition-colors"
             >
               <div className="flex items-center justify-between text-nm-orange mb-1">
-                <div className="font-display font-black text-xl xs:text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-0.5">
+                <div className="font-display font-black text-lg xs:text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-0.5">
                   {statsInView ? <CountUp end={8} duration={2.5} /> : "0"}
-                  <span className="text-nm-orange text-lg sm:text-xl font-bold">+</span>
+                  <span className="text-nm-orange text-base sm:text-xl font-bold">+</span>
                 </div>
                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-nm-orange shrink-0 hidden xs:block" />
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-300 font-medium mt-0.5 sm:mt-1 truncate">Proven Excellence</div>
+              <div className="text-[9px] xs:text-[10px] sm:text-xs text-slate-300 font-medium mt-0.5 sm:mt-1 truncate">Proven Excellence</div>
               <div className="text-[9px] text-slate-400 font-mono hidden sm:block">8+ Years Experience</div>
               {/* Animated rising progress line */}
               <motion.div 
@@ -194,16 +194,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group hover:border-nm-yellow/40 transition-colors"
+              className="p-2 xs:p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group hover:border-nm-yellow/40 transition-colors"
             >
               <div className="flex items-center justify-between text-nm-yellow mb-1">
-                <div className="font-display font-black text-xl xs:text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-0.5">
+                <div className="font-display font-black text-lg xs:text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-0.5">
                   {statsInView ? <CountUp end={300} duration={2.5} /> : "0"}
-                  <span className="text-nm-yellow text-lg sm:text-xl font-bold">+</span>
+                  <span className="text-nm-yellow text-base sm:text-xl font-bold">+</span>
                 </div>
                 <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-nm-yellow shrink-0 hidden xs:block" />
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-300 font-medium mt-0.5 sm:mt-1 truncate">Successful Campaigns</div>
+              <div className="text-[9px] xs:text-[10px] sm:text-xs text-slate-300 font-medium mt-0.5 sm:mt-1 truncate">Campaigns</div>
               <div className="text-[9px] text-slate-400 font-mono hidden sm:block">300+ Delivered</div>
               {/* Animated rising progress line */}
               <motion.div 
@@ -218,16 +218,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group hover:border-nm-red/40 transition-colors"
+              className="p-2 xs:p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group hover:border-nm-red/40 transition-colors"
             >
               <div className="flex items-center justify-between text-nm-red mb-1">
-                <div className="font-display font-black text-xl xs:text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-0.5">
+                <div className="font-display font-black text-lg xs:text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-0.5">
                   {statsInView ? <CountUp end={150} duration={2.5} /> : "0"}
-                  <span className="text-nm-red text-lg sm:text-xl font-bold">+</span>
+                  <span className="text-nm-red text-base sm:text-xl font-bold">+</span>
                 </div>
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-nm-red shrink-0 hidden xs:block" />
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-300 font-medium mt-0.5 sm:mt-1 truncate">Trusted Clients</div>
+              <div className="text-[9px] xs:text-[10px] sm:text-xs text-slate-300 font-medium mt-0.5 sm:mt-1 truncate">Trusted Clients</div>
               <div className="text-[9px] text-slate-400 font-mono hidden sm:block">150+ Empowered</div>
               {/* Animated rising progress line */}
               <motion.div 
@@ -246,20 +246,20 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="relative flex justify-center items-center w-full px-1 sm:px-0"
+          className="relative flex justify-center items-center w-full px-0"
         >
           {/* Multi-layer Ambient Backlight Glow */}
           <div className="absolute inset-0 bg-gradient-to-tr from-nm-orange/25 via-nm-yellow/20 to-nm-red/25 rounded-3xl blur-3xl opacity-60 transform scale-95 pointer-events-none" />
 
           {/* Premium Glass Dashboard Card Container */}
-          <div className="relative w-full max-w-[500px] rounded-2xl sm:rounded-3xl p-4 sm:p-6 bg-[#0B0D17]/95 border border-white/15 backdrop-blur-2xl shadow-[0_30px_70px_rgba(0,0,0,0.85)] flex flex-col justify-between overflow-hidden group hover:border-nm-orange/40 transition-all duration-500">
+          <div className="relative w-full max-w-[500px] rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 bg-[#0B0D17]/95 border border-white/15 backdrop-blur-2xl shadow-[0_30px_70px_rgba(0,0,0,0.85)] flex flex-col justify-between overflow-hidden group hover:border-nm-orange/40 transition-all duration-500">
             
             {/* Top Accent Gradient Line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-nm-orange to-transparent opacity-80" />
 
             {/* Header: Title & 8-Year Badge */}
             <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4 relative z-10">
-              <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-nm-orange to-nm-yellow flex items-center justify-center text-nm-ink shadow-lg shadow-nm-orange/30 shrink-0">
                   <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
@@ -281,7 +281,7 @@ export default function Hero() {
             </div>
 
             {/* Interactive Milestone Switcher Tabs */}
-            <div className="grid grid-cols-3 gap-1.5 my-3.5 p-1 bg-white/5 rounded-xl border border-white/10 relative z-10">
+            <div className="grid grid-cols-3 gap-1 my-3 p-1 bg-white/5 rounded-xl border border-white/10 relative z-10">
               {[
                 { key: "campaigns", label: "Campaigns", val: "300+", badge: "+340%" },
                 { key: "clients", label: "Clients", val: "150+", badge: "96.4%" },
@@ -290,15 +290,15 @@ export default function Hero() {
                 <button
                   key={item.key}
                   onClick={() => setActiveGrowthTab(item.key)}
-                  className={`p-2 rounded-lg text-left transition-all ${
+                  className={`p-1.5 sm:p-2 rounded-lg text-left transition-all ${
                     activeGrowthTab === item.key
                       ? "bg-gradient-to-r from-nm-orange/20 to-nm-yellow/10 border border-nm-orange/40 shadow-inner"
                       : "hover:bg-white/5 border border-transparent"
                   }`}
                 >
                   <div className="text-[9px] sm:text-[10px] font-mono text-slate-400 flex items-center justify-between">
-                    <span>{item.label}</span>
-                    <span className="text-[8px] text-emerald-400 font-semibold">{item.badge}</span>
+                    <span className="truncate">{item.label}</span>
+                    <span className="text-[7.5px] xs:text-[8px] text-emerald-400 font-semibold ml-0.5 hidden xs:inline">{item.badge}</span>
                   </div>
                   <div className={`text-xs sm:text-sm font-bold font-display ${activeGrowthTab === item.key ? "text-white" : "text-slate-300"}`}>
                     {item.val}
@@ -311,21 +311,21 @@ export default function Hero() {
             <div className="my-1 relative z-10 flex items-baseline justify-between px-1">
               <div>
                 <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">{currentMetric.label}</div>
-                <div className="text-2xl sm:text-3xl font-black text-white font-display tracking-tight flex items-center gap-2 mt-0.5">
+                <div className="text-xl sm:text-3xl font-black text-white font-display tracking-tight flex flex-wrap items-center gap-1.5 sm:gap-2 mt-0.5">
                   <span>{currentMetric.value}</span>
-                  <span className="text-[10px] sm:text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-0.5">
+                  <span className="text-[9px] sm:text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-0.5">
                     <ArrowUpRight className="w-3 h-3" /> {currentMetric.growth}
                   </span>
                 </div>
               </div>
-              <div className="text-right">
+              <div className="text-right shrink-0">
                 <div className="text-[10px] font-mono text-slate-400">Milestone</div>
                 <div className="text-xs sm:text-sm font-bold text-nm-yellow font-display">{currentMetric.peak}</div>
               </div>
             </div>
 
-            {/* Clean 8-Year SVG Growth Graph Component (No moving laser lines or pricing) */}
-            <div className="relative h-44 sm:h-52 w-full my-3 relative z-10 flex flex-col justify-between overflow-hidden rounded-xl bg-slate-950/40 border border-white/5 p-2">
+            {/* Clean 8-Year SVG Growth Graph Component */}
+            <div className="relative h-40 sm:h-52 w-full my-3 z-10 flex flex-col justify-between overflow-hidden rounded-xl bg-slate-950/40 border border-white/5 p-2">
               
               {/* Horizontal Dashed Grid Lines & Scale Markers */}
               <div className="absolute inset-0 px-2 py-3 flex flex-col justify-between pointer-events-none text-[9px] font-mono text-slate-400 opacity-50">
@@ -430,16 +430,16 @@ export default function Hero() {
               </div>
 
               {/* Floating Badge inside Graph */}
-              <div className="absolute top-2 right-4 bg-[#141829]/95 border border-nm-orange/40 shadow-[0_0_20px_rgba(255,107,0,0.25)] px-3 py-1 rounded-lg flex items-center gap-2 z-20">
-                <Sparkles className="w-3 h-3 text-nm-yellow" />
-                <span className="text-[10px] font-mono font-bold text-white">
+              <div className="absolute top-2 right-2 sm:right-4 bg-[#141829]/95 border border-nm-orange/40 shadow-[0_0_20px_rgba(255,107,0,0.25)] px-2.5 sm:px-3 py-1 rounded-lg flex items-center gap-1.5 sm:gap-2 z-20">
+                <Sparkles className="w-3 h-3 text-nm-yellow shrink-0" />
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-white truncate">
                   8+ Years Continuous Growth
                 </span>
               </div>
             </div>
 
             {/* 8-Year Phase Milestones Breakdown */}
-            <div className="pt-3 border-t border-white/10 space-y-2 relative z-10">
+            <div className="pt-2 sm:pt-3 border-t border-white/10 space-y-1.5 sm:space-y-2 relative z-10">
               <div className="flex justify-between text-[10px] font-mono text-slate-400">
                 <span>8-Year Evolution Phases</span>
                 <span>Scale Milestone</span>
@@ -451,9 +451,9 @@ export default function Hero() {
                 { phase: "2024-2026: Full-Funnel Ecosystem", status: "Market Leader", pct: "Peak", width: "100%", gradient: "from-nm-yellow via-nm-orange to-nm-red" },
               ].map((m, idx) => (
                 <div key={idx} className="space-y-1">
-                  <div className="flex justify-between text-[11px] text-slate-300 font-medium">
-                    <span>{m.phase}</span>
-                    <span className="font-mono text-white font-bold">{m.status}</span>
+                  <div className="flex justify-between text-[10px] sm:text-[11px] text-slate-300 font-medium">
+                    <span className="truncate pr-1">{m.phase}</span>
+                    <span className="font-mono text-white font-bold shrink-0">{m.status}</span>
                   </div>
                   <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
                     <motion.div
@@ -471,14 +471,14 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 left-1 sm:-top-4 sm:-left-3 bg-[#0F1221]/95 border border-white/20 backdrop-blur-xl px-3 py-2 rounded-xl shadow-2xl flex items-center gap-2.5 z-20"
+              className="absolute -top-3 left-0 sm:-top-4 sm:-left-3 bg-[#0F1221]/95 border border-white/20 backdrop-blur-xl px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-2xl flex items-center gap-2 z-20 max-w-[85%] sm:max-w-none"
             >
-              <div className="w-7 h-7 rounded-lg bg-nm-orange/20 flex items-center justify-center text-nm-orange border border-nm-orange/30 shrink-0">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-nm-orange/20 flex items-center justify-center text-nm-orange border border-nm-orange/30 shrink-0">
                 <Award className="w-3.5 h-3.5" />
               </div>
-              <div>
-                <div className="text-[11px] font-bold text-white">Founded 2018</div>
-                <div className="text-[9px] text-slate-300 font-mono">8+ Years Experience</div>
+              <div className="min-w-0">
+                <div className="text-[10px] sm:text-[11px] font-bold text-white truncate">Founded 2018</div>
+                <div className="text-[8.5px] sm:text-[9px] text-slate-300 font-mono truncate">8+ Yrs Excellence</div>
               </div>
             </motion.div>
 
@@ -486,14 +486,14 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, 5, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-3 right-1 sm:-bottom-4 sm:-right-3 bg-[#0F1221]/95 border border-white/20 backdrop-blur-xl px-3 py-2 rounded-xl shadow-2xl flex items-center gap-2.5 z-20"
+              className="absolute -bottom-3 right-0 sm:-bottom-4 sm:-right-3 bg-[#0F1221]/95 border border-white/20 backdrop-blur-xl px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-2xl flex items-center gap-2 z-20 max-w-[85%] sm:max-w-none"
             >
-              <div className="w-7 h-7 rounded-lg bg-nm-yellow/20 flex items-center justify-center text-nm-yellow border border-nm-yellow/30 shrink-0">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-nm-yellow/20 flex items-center justify-center text-nm-yellow border border-nm-yellow/30 shrink-0">
                 <CheckCircle2 className="w-3.5 h-3.5" />
               </div>
-              <div>
-                <div className="text-[11px] font-bold text-white">300+ Campaigns</div>
-                <div className="text-[9px] text-slate-300 font-mono">150+ Clients</div>
+              <div className="min-w-0">
+                <div className="text-[10px] sm:text-[11px] font-bold text-white truncate">300+ Campaigns</div>
+                <div className="text-[8.5px] sm:text-[9px] text-slate-300 font-mono truncate">150+ Clients</div>
               </div>
             </motion.div>
           </div>

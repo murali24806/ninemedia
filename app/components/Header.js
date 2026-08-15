@@ -33,9 +33,9 @@ export default function Header() {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 group">
-          <div className="relative h-9 xs:h-11 sm:h-13 md:h-15 w-40 xs:w-48 sm:w-56 md:w-64 max-w-[65vw] xs:max-w-none transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-9 sm:h-11 md:h-14 w-36 xs:w-44 sm:w-56 md:w-64 max-w-[60vw] sm:max-w-none transition-transform duration-300 group-hover:scale-105">
             <img
               src="/logo-full.png"
               alt="Nine Media Brand Solutions"
@@ -76,7 +76,7 @@ export default function Header() {
         </div>
 
         <button
-          className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg bg-white/5 border border-white/10"
+          className="lg:hidden min-w-[44px] min-h-[44px] w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/5 border border-white/10 active:scale-95 transition-all touch-manipulation"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -100,23 +100,23 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden mt-3 mx-6 rounded-2xl bg-[#0F111A]/95 border border-white/10 backdrop-blur-2xl shadow-2xl p-6 flex flex-col gap-4">
+        <div className="lg:hidden mt-3 mx-3 sm:mx-6 rounded-2xl bg-[#0F111A]/95 border border-white/10 backdrop-blur-2xl shadow-2xl p-5 sm:p-6 flex flex-col gap-4 max-h-[85vh] overflow-y-auto smooth-scroll-mobile">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-semibold text-slate-200 hover:text-nm-orange transition-colors"
+              className="text-sm font-semibold text-slate-200 hover:text-nm-orange transition-colors py-1"
             >
               {l.label}
             </a>
           ))}
-          <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
             <a
               href={`tel:${contact.phoneRaw}`}
-              className="text-xs font-medium text-slate-400 flex items-center gap-2"
+              className="text-xs font-medium text-slate-300 flex items-center gap-2 py-1"
             >
-              <Phone className="w-3.5 h-3.5 text-nm-orange" />
+              <Phone className="w-3.5 h-3.5 text-nm-orange shrink-0" />
               {contact.phone} / {contact.phone2}
             </a>
             <a

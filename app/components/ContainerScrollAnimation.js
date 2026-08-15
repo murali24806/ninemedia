@@ -6,6 +6,7 @@ export const ContainerScroll = ({ titleComponent, children }) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    offset: ["start end", "end start"],
   });
   const [isMobile, setIsMobile] = useState(false);
 
@@ -20,13 +21,13 @@ export const ContainerScroll = ({ titleComponent, children }) => {
     };
   }, []);
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [isMobile ? 8 : 20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [isMobile ? 0.95 : 1.03, 1]);
-  const translate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -20 : -80]);
+  const rotate = useTransform(scrollYProgress, [0, 0.55], [isMobile ? 14 : 20, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.55], [isMobile ? 0.88 : 1.03, 1]);
+  const translate = useTransform(scrollYProgress, [0, 0.55], [0, isMobile ? -10 : -60]);
 
   return (
     <div
-      className="py-8 sm:py-14 md:py-20 flex items-center justify-center relative p-2 sm:p-6 md:p-8"
+      className="py-12 sm:py-16 md:py-24 flex items-center justify-center relative p-2 sm:p-6 md:p-8"
       ref={containerRef}
     >
       <div
@@ -50,7 +51,7 @@ export const Header = ({ translate, titleComponent }) => {
       style={{
         translateY: translate,
       }}
-      className="max-w-5xl mx-auto text-center px-4 mb-4 sm:mb-8 will-change-transform transform-gpu"
+      className="max-w-5xl mx-auto text-center px-3 sm:px-4 mb-4 sm:mb-8 will-change-transform transform-gpu"
     >
       {titleComponent}
     </motion.div>
@@ -66,9 +67,9 @@ export const Card = ({ rotate, scale, children }) => {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl mx-auto h-auto min-h-[22rem] sm:min-h-[34rem] md:min-h-[38rem] w-full border-2 sm:border-4 border-[#23283B] p-2 sm:p-4 md:p-6 bg-[#141724] rounded-[20px] sm:rounded-[32px] shadow-2xl shadow-nm-orange/20 relative group hover:border-nm-orange/50 transition-colors flex flex-col will-change-transform transform-gpu"
+      className="max-w-5xl mx-auto h-auto min-h-[18rem] xs:min-h-[22rem] sm:min-h-[34rem] md:min-h-[38rem] w-full border border-white/10 sm:border-4 sm:border-[#23283B] p-1.5 sm:p-4 md:p-6 bg-[#141724] rounded-[16px] sm:rounded-[32px] shadow-2xl shadow-nm-orange/20 relative group hover:border-nm-orange/50 transition-colors flex flex-col will-change-transform transform-gpu"
     >
-      <div className="w-full h-full h-auto min-h-[20rem] sm:min-h-[32rem] md:min-h-[35rem] rounded-xl sm:rounded-2xl bg-[#08090D] relative flex flex-col justify-center">
+      <div className="w-full h-full h-auto min-h-[16rem] xs:min-h-[20rem] sm:min-h-[32rem] md:min-h-[35rem] rounded-lg sm:rounded-2xl bg-[#08090D] relative flex flex-col justify-center">
         {children}
       </div>
     </motion.div>

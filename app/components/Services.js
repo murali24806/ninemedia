@@ -154,11 +154,11 @@ export default function Services() {
                         <span className="text-[10px] font-mono uppercase tracking-widest text-nm-yellow block mb-3 font-semibold">
                           Key Deliverables Include:
                         </span>
-                        <div className="grid grid-cols-2 gap-2 mb-6">
+                        <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 mb-6">
                           {deliverables.map((item, i) => (
-                            <div key={i} className="flex items-center gap-1.5 text-xs text-slate-200 bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/5">
+                            <div key={i} className="flex items-center gap-1.5 text-xs text-slate-200 bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/5 min-w-0">
                               <CheckCircle2 className="w-3.5 h-3.5 text-nm-orange shrink-0" />
-                              <span className="truncate">{item}</span>
+                              <span className="truncate xs:whitespace-normal">{item}</span>
                             </div>
                           ))}
                         </div>

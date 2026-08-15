@@ -29,7 +29,7 @@ export default function HeroScrollShowcase() {
         }
       >
         {/* Dashboard Showcase Content inside 3D Card */}
-        <div className="w-full h-full bg-[#0F111A] p-4 sm:p-6 md:p-8 flex flex-col justify-between relative overflow-hidden text-left overflow-y-auto">
+        <div className="w-full h-full bg-[#0F111A] p-3 sm:p-6 md:p-8 flex flex-col justify-between relative overflow-hidden text-left">
           {/* Subtle Grid Background */}
           <div 
             className="absolute inset-0 opacity-[0.05] pointer-events-none"

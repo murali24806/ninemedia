@@ -77,24 +77,24 @@ export default function CaseStudies() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
-          <div className="embla__container flex -ml-6 will-change-transform transform-gpu">
+          <div className="embla__container flex -ml-4 sm:-ml-6 will-change-transform transform-gpu">
             {caseStudies.map((cs) => (
               <div
                 key={cs.client}
-                className="embla__slide flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_40%] pl-6"
+                className="embla__slide flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_40%] pl-4 sm:pl-6"
               >
-                <div className="rounded-3xl border border-white/10 bg-[#141724]/90 p-8 hover:border-nm-orange/40 transition-all duration-300 h-full flex flex-col justify-between shadow-2xl group">
+                <div className="rounded-3xl border border-white/10 bg-[#141724]/90 p-5 sm:p-8 hover:border-nm-orange/40 transition-all duration-300 h-full flex flex-col justify-between shadow-2xl group">
                   <div>
-                    <div className="flex items-center justify-between gap-4 mb-6">
-                      <h3 className="font-display font-bold text-2xl text-white group-hover:text-nm-yellow transition-colors">
+                    <div className="flex flex-wrap items-center justify-between gap-2.5 mb-5 sm:mb-6">
+                      <h3 className="font-display font-bold text-xl sm:text-2xl text-white group-hover:text-nm-yellow transition-colors">
                         {cs.client}
                       </h3>
-                      <span className="font-mono text-[10px] font-bold text-nm-orange uppercase tracking-wider px-3 py-1 bg-nm-orange/10 rounded-full border border-nm-orange/20">
+                      <span className="font-mono text-[10px] font-bold text-nm-orange uppercase tracking-wider px-2.5 py-1 bg-nm-orange/10 rounded-full border border-nm-orange/20">
                         {cs.sector}
                       </span>
                     </div>
 
-                    <dl className="space-y-4 text-sm">
+                    <dl className="space-y-3.5 sm:space-y-4 text-xs sm:text-sm">
                       <div>
                         <dt className="font-mono text-[10px] uppercase tracking-widest text-slate-400 mb-1">
                           The Challenge
@@ -114,12 +114,12 @@ export default function CaseStudies() {
                     </dl>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-white/10 bg-gradient-to-r from-nm-orange/10 via-transparent to-transparent -mx-8 -mb-8 p-8 rounded-b-3xl">
+                  <div className="pt-5 sm:pt-6 mt-5 sm:mt-6 border-t border-white/10 bg-gradient-to-r from-nm-orange/10 via-transparent to-transparent -mx-5 -mb-5 sm:-mx-8 sm:-mb-8 p-5 sm:p-8 rounded-b-3xl">
                     <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-nm-yellow mb-1">
-                      <CheckCircle className="w-4 h-4" />
+                      <CheckCircle className="w-4 h-4 shrink-0" />
                       Key Result Delivered
                     </div>
-                    <div className="text-white font-bold leading-relaxed text-base">
+                    <div className="text-white font-bold leading-relaxed text-sm sm:text-base">
                       {cs.result}
                     </div>
                   </div>

@@ -92,4 +92,13 @@ button:focus-visible {
   .glow-orange {
     box-shadow: 0 0 40px rgba(255, 107, 0, 0.3);
   }
+
+  .smooth-scroll-mobile {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mask-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
 }

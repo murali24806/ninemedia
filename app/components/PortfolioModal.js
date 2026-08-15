@@ -108,7 +108,7 @@ export default function PortfolioModal({ item, onClose, logoData, impact }) {
           </div>
 
           {/* Modal Scrollable Body */}
-          <div className="p-4 sm:p-6 md:p-8 overflow-y-auto space-y-6 sm:space-y-8 flex-1 scrollbar-thin">
+          <div className="p-3.5 sm:p-6 md:p-8 overflow-y-auto space-y-5 sm:space-y-8 flex-1 smooth-scroll-mobile">
             {/* Gallery / Image Showcase Section */}
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center justify-between flex-wrap gap-1">
@@ -120,7 +120,7 @@ export default function PortfolioModal({ item, onClose, logoData, impact }) {
               </div>
 
               {/* Main Image Viewer */}
-              <div className="relative group rounded-xl sm:rounded-2xl overflow-hidden bg-black/80 border border-white/10 aspect-[4/3] sm:aspect-[16/9] flex items-center justify-center p-2 sm:p-4">
+              <div className="relative group rounded-xl sm:rounded-2xl overflow-hidden bg-black/80 border border-white/10 aspect-[4/3] xs:aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center p-2 sm:p-4">
                 <img
                   src={currentImage}
                   alt={`${item.client} Work Sample ${activeImageIndex + 1}`}

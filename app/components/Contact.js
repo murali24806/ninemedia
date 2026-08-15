@@ -137,7 +137,7 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-[#141724] rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl space-y-6"
+            className="bg-[#141724] rounded-3xl p-5 sm:p-8 md:p-10 border border-white/10 shadow-2xl space-y-5 sm:space-y-6"
           >
             <h3 className="font-display font-bold text-xl text-white mb-2">Send a Message</h3>
             
